@@ -455,21 +455,6 @@
       '<div class="detail-loc">&#128337; '+s.hours+' &nbsp;&middot;&nbsp; &#128205; '+s.loc+'</div>'+
       '<a class="maps-link" href="'+gmaps(s.loc+', Gorizia')+'" target="_blank" rel="noopener">&#128506;&#65039; Open in Google Maps</a>';
 
-    var media = document.getElementById('stand-media');
-    media.innerHTML = '';
-    var mediaEmojis = ['&#127909;','&#127860;','&#127859;'];
-    for(var i=0;i<3;i++){
-      var t = document.createElement('div');
-      t.className = 'media-tile';
-      t.innerHTML = mediaEmojis[i]+'<span class="tag">PHOTO</span>';
-      media.appendChild(t);
-    }
-    var vid = document.createElement('div');
-    vid.className = 'media-tile';
-    vid.setAttribute('data-video','1');
-    vid.innerHTML = '&#127909;<span class="tag">VIDEO</span><div class="play-badge">&#9654;&#65039;</div>';
-    media.appendChild(vid);
-
     document.getElementById('stand-item-count').textContent = s.items.length+' DISHES';
     var menu = document.getElementById('stand-menu');
     menu.innerHTML = '';
@@ -664,7 +649,6 @@
     var priceChip = e.target.closest('[data-price]');
     var dietChip = e.target.closest('[data-diet]');
     var borgoChip = e.target.closest('[data-borgo-filter]');
-    var videoTile = e.target.closest('[data-video]');
     var favBtn = e.target.closest('#fav-toggle');
     var photoTile = e.target.closest('[data-photo-index]');
     var dishPhotoBtn = e.target.closest('[data-dish-photo-idx]');
@@ -734,9 +718,6 @@
       if(idx===-1) state.borgoFilters.push(bid); else state.borgoFilters.splice(idx,1);
       renderFilters(); runSearch(); return;
     }
-    if(videoTile){ document.getElementById('video-modal').hidden = false; return; }
-    if(e.target.closest('#video-modal-close')){ document.getElementById('video-modal').hidden = true; return; }
-    if(e.target.id === 'video-modal'){ document.getElementById('video-modal').hidden = true; return; }
     if(favBtn){
       var sid = state.standId;
       var i = state.savedIds.indexOf(sid);
