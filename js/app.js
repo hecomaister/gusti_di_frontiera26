@@ -447,7 +447,27 @@
     { src:'assets/photos/1000023531.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
     { src:'assets/photos/1000023532.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
     { src:'assets/photos/1000023533.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
-    { src:'assets/photos/1000023534.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' }
+    { src:'assets/photos/1000023534.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/evening-market-street-flags.jpg', alt:'Crowded festival street at dusk lined with white stall tents and country flags', credit:'Evening market street &middot; on site' },
+    { src:'assets/photos/chimney-cake-grill-sparks.jpg', alt:'Chimney cake dough rolls turning on skewers over hot coals with sparks flying', credit:'Chimney cake grill &middot; on site' },
+    { src:'assets/photos/skewer-grill-gloved-hand.jpg', alt:'Gloved hand placing raw meat skewers onto a charcoal grill', credit:'Skewer grill prep &middot; on site' },
+    { src:'assets/photos/fvg-pavilion-glass-facade.jpg', alt:'Glass-walled &quot;Io Sono Friuli Venezia Giulia&quot; pavilion in Piazza della Vittoria at dusk', credit:'Borgo FVG pavilion &middot; Piazza della Vittoria' },
+    { src:'assets/photos/craft-beer-taps-pour.jpg', alt:'Bartender pouring a craft beer from a row of taps at a beer stand', credit:'Craft beer stand &middot; on site' },
+    { src:'assets/photos/mexican-tacos-stand.jpg', alt:'Vendor arranging taco shells at a Mexican food stand decorated with sombreros', credit:'Mexican tacos stand &middot; on site' },
+    { src:'assets/photos/moroccan-spice-stall-staff.jpg', alt:'Staff smiling behind trays of spices and pastries at a purple Moroccan-themed stall', credit:'Moroccan spice stall &middot; Borgo Africa' },
+    { src:'assets/photos/twisted-potato-skewers-stand.jpg', alt:'Two vendors holding spiral-cut potato skewers and grilled arrosticini at their stand', credit:'Twisted potato stand &middot; on site' },
+    { src:'assets/photos/grappa-liqueur-stand.jpg', alt:'Vendor holding a bottle of artisanal liqueur in front of a shelf of labeled bottles', credit:'Artisan liqueur stand &middot; on site' },
+    { src:'assets/photos/smash-burger-stand-staff.jpg', alt:'Two staff members smiling while cooking smash burgers on a griddle', credit:'Smash burger stand &middot; Borgo Americhe' },
+    { src:'assets/photos/wine-tasting-stand.jpg', alt:'Visitors tasting wine with staff at a stand lined with bottles in ice buckets', credit:'Wine tasting stand &middot; on site' },
+    { src:'assets/photos/piazza-crowd-night.jpg', alt:'Large crowd filling a piazza at night beneath string lights and lamp posts', credit:'Piazza at night &middot; on site' },
+    { src:'assets/photos/via-rastello-night-crowd.jpg', alt:'Crowd of visitors walking a lit-up historic street lined with shops at night', credit:'Via Rastello by night &middot; on site' },
+    { src:'assets/photos/dutch-windmill-crepes-stand.jpg', alt:'Inflatable orange windmill decoration above a mini crepes stand at night', credit:'Dutch crepes stand &middot; on site' },
+    { src:'assets/photos/picanheria-brazilian-sandwich.jpg', alt:'Vendor handing over a wrapped sandwich from a Brazilian steakhouse food truck', credit:'Picanheria street food &middot; on site' },
+    { src:'assets/photos/argentina-grill-skewers-smoke.jpg', alt:'Two grill staff standing behind smoking skewered meats at an Argentine stand', credit:'Argentine grill &middot; on site' },
+    { src:'assets/photos/czech-carp-fries-stand.jpg', alt:'Chefs serving organic carp fries to a visitor at a Czech food stand', credit:'Czech carp fries stand &middot; on site' },
+    { src:'assets/photos/argentina-asado-grill.jpg', alt:'Chef giving a thumbs up beside skewered ribs cooking over an open asado grill', credit:'Argentine asado grill &middot; on site' },
+    { src:'assets/photos/breton-biscuits-stand.jpg', alt:'Vendor arranging trays of Breton butter biscuits and cookies at a French stand', credit:'Breton biscuits stand &middot; Borgo Francia' },
+    { src:'assets/photos/piedmont-cured-meats-cheese.jpg', alt:'Vendor offering a sample of cheese in front of Piedmont cured meats and salami', credit:'Piedmont cured meats stand &middot; on site' }
   ];
 
   var WEBCAMS = [
