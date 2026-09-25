@@ -284,6 +284,20 @@
   function loadSaved(){ try{ var r=localStorage.getItem('gd_saved'); return r?JSON.parse(r):[]; }catch(e){ return []; } }
   function persistSaved(){ try{ localStorage.setItem('gd_saved', JSON.stringify(state.savedIds)); }catch(e){} }
 
+  // First dish in this borgo (in stand/menu order) that has a licensed photo,
+  // used as a small preview square on the borgo banner. Not literally random —
+  // deterministic so the same borgo always shows the same preview on reload.
+  function borgoPhoto(b){
+    for(var i=0;i<b.stands.length;i++){
+      var items = b.stands[i].items;
+      for(var j=0;j<items.length;j++){
+        var photo = DISH_PHOTOS[items[j].name];
+        if(photo) return { photo:photo, name:items[j].name };
+      }
+    }
+    return null;
+  }
+
   function findBorgo(id){ return BORGHI.filter(function(b){return b.id===id;})[0]; }
   function findStand(bId,sId){ var b=findBorgo(bId); return b ? b.stands.filter(function(s){return s.id===sId;})[0] : null; }
   function priceRange(stand){
@@ -429,12 +443,19 @@
     state.borgoId = id;
     var banner = document.getElementById('borgo-banner');
     banner.style.background = b.color;
+    var bp = borgoPhoto(b);
+    var photoHtml = bp ? '<div class="detail-banner-photo" style="background-image:url(&quot;'+bp.photo.src+'&quot;)" title="'+bp.name+' &mdash; symbolic photo" aria-hidden="true"></div>' : '';
     banner.innerHTML =
-      '<div class="eyebrow" style="color:rgba(255,255,255,0.85)">No. '+b.num+' &middot; '+b.flag+' &nbsp;'+b.country+'</div>'+
-      '<h2>'+b.name+'</h2>'+
-      '<p>'+b.desc+'</p>'+
-      '<div class="detail-loc">&#128205; '+b.loc+'</div>'+
-      '<a class="maps-link" href="'+gmaps(b.loc+', Gorizia')+'" target="_blank" rel="noopener">&#128506;&#65039; Open in Google Maps</a>';
+      '<div class="detail-banner-row">'+
+        '<div class="detail-banner-text">'+
+          '<div class="eyebrow" style="color:rgba(255,255,255,0.85)">No. '+b.num+' &middot; '+b.flag+' &nbsp;'+b.country+'</div>'+
+          '<h2>'+b.name+'</h2>'+
+          '<p>'+b.desc+'</p>'+
+          '<div class="detail-loc">&#128205; '+b.loc+'</div>'+
+          '<a class="maps-link" href="'+gmaps(b.loc+', Gorizia')+'" target="_blank" rel="noopener">&#128506;&#65039; Open in Google Maps</a>'+
+        '</div>'+
+        photoHtml+
+      '</div>';
 
     var list = document.getElementById('borgo-stand-list');
     list.innerHTML = '';
