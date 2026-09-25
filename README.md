@@ -1,36 +1,38 @@
-# Gusti di Frontiera 2026 — Guida ai Borghi
+# Gusti Digitali — Guida a Gusti di Frontiera 2026
 
-Guida non ufficiale, a cura della community, per il festival **Gusti di Frontiera** a Gorizia/Nova Gorica (25–27 settembre). Sito statico (HTML/CSS/JS puro, nessuna build necessaria), pensato per essere tradotto automaticamente dal browser (Google Translate su Chrome) grazie a un'architettura a pagina singola dove tutte le viste sono già presenti nel DOM al caricamento.
+Guida non ufficiale, mobile-first, per il festival **Gusti di Frontiera** a Gorizia (24–27 settembre). Sito statico (HTML/CSS/JS puro, nessuna build necessaria), pensato per essere tradotto automaticamente dal browser (Google Translate su Chrome) grazie a un'architettura a pagina singola dove tutte le viste sono già presenti nel DOM al caricamento.
 
 ## Contenuti
 
-- **Home**: elenco dei 17 borghi con via/piazza reale
-- **Mappa**: mappa interattiva con le posizioni verificate dei borghi e i servizi (info point, primo soccorso, WC, parcheggi, numero mobilità, emergenze)
-- **Cerca**: ricerca testuale sui borghi
-- **Preferiti**: salvataggio locale (localStorage) dei borghi da visitare
+- **Home**: statistiche del festival ed elenco dei 17 borghi ufficiali
+- **Borgo → Stand → Menu**: dettaglio di ogni borgo, i suoi stand, orari, posizione e menu con prezzi
+- **Mappa**: mappa ufficiale del festival (`assets/festival-map.jpg`) con pin cliccabili sovrapposti per ciascun borgo
+- **Cerca**: ricerca testuale sui piatti/stand/borghi, con filtri per prezzo, dieta (vegetariano, vegano, senza glutine) e borgo
+- **Preferiti**: salvataggio locale (localStorage) degli stand da non perdere
 
-## Regola sui dati
+## Nota sui dati
 
-Ogni menu o prezzo pubblicato deve avere una fonte reale (foto raccolta sul posto, dato dell'organizzazione, materiale verificato). Finché un borgo non ha dati reali, la sua scheda mostra onestamente **"Menu in arrivo"** — mai prezzi inventati.
+Il banner in alto nell'app dichiara onestamente che si tratta di una guida indipendente, non ufficiale, e che menu/prezzi mostrati sono **esempi** finché non vengono confermati da ogni singolo espositore. Borghi, vie e posizioni sulla mappa sono invece reali.
 
 ## Struttura del progetto
 
 ```
-index.html        pagina unica con tutte le viste
-css/style.css      stile
-js/data.js         dati reali dei 17 borghi (posizioni, colori, vie)
-js/app.js          logica dell'app (routing tra viste, preferiti, ricerca, mappa)
-borghi-mappa.json  dati grezzi di verifica delle posizioni sulla mappa ufficiale
+index.html               pagina unica con tutte le viste (head con meta SEO multilingua)
+js/app.js                dati dei 17 borghi/stand/menu + logica dell'app (routing, preferiti, ricerca, mappa)
+assets/festival-map.jpg  mappa ufficiale del festival
+borghi-mappa.json        dati grezzi di verifica delle posizioni sulla mappa ufficiale
 piano-gusti-digitali.md  piano editoriale e note di raccolta dati
 ```
 
 ## Sviluppo locale
 
-Nessuna build richiesta: apri `index.html` in un browser, oppure servi la cartella con un server statico qualsiasi, ad esempio:
+Nessuna build richiesta: serve un server statico qualsiasi (l'apertura diretta del file può bloccare il caricamento di `js/app.js` per via del protocollo `file://`), ad esempio:
 
 ```bash
 python -m http.server 8000
 ```
+
+poi apri `http://localhost:8000`.
 
 ## Pubblicazione su GitHub Pages
 
@@ -41,10 +43,13 @@ python -m http.server 8000
 
 ## Aggiornare i dati reali
 
-Aggiungi gli stand raccolti sul posto in `js/data.js`, nel campo `stands` del borgo corrispondente, ad esempio:
+Aggiungi gli stand raccolti sul posto nell'array `BORGHI` in `js/app.js`, dentro il campo `stands` del borgo corrispondente:
 
 ```js
-stands: [
-  { name: "Nome stand", menu: [{ item: "Piatto", price: 8 }] }
-]
+{ id:'nome-stand', name:'Nome Stand', hours:'11:00 &ndash; 00:00', loc:'Via Esempio', open:true,
+  items:[
+    {name:'Nome piatto', desc:'Descrizione breve', price:7, tags:[], icon:'grill'}
+  ]}
 ```
+
+Icone disponibili: `grill`, `soup`, `sweet`, `drink`, `bread`, `wrap`, `rice`, `skewer`. Tag dieta: `veg`, `vegan`, `gluten-free`.
