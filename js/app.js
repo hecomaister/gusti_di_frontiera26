@@ -38,9 +38,10 @@
       stands:[
         { id:'sapori-italia', name:"Sapori d'Italia", hours:FESTIVAL_HOURS_LABEL, loc:'Via Garibaldi',
           items:[
-            {name:'Tagliatelle al rag&ugrave;', desc:'Fresh hand-rolled egg pasta tossed with a slow-simmered beef and pork rag&ugrave;, topped with grated Parmigiano.', price:7, tags:[], icon:'wrap'},
-            {name:'Cured meats & cheese board', desc:'Thin-sliced prosciutto, salame and coppa with two aged regional cheeses, served with bread.', price:8, tags:[], icon:'grill'},
-            {name:'Tiramis&ugrave;', desc:'Ladyfinger biscuits soaked in espresso, layered with whipped mascarpone cream and dusted with cocoa.', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Arrosticini di pecora', desc:'Small skewers of lamb from Abruzzo, grilled over charcoal and lightly salted.', price:7, tags:[], icon:'skewer'},
+            {name:'Pizza fritta', desc:'Neapolitan folded fried pizza dough, crisp outside and soft within.', price:5, tags:['veg'], icon:'wrap'},
+            {name:'Cacio e pepe mantecato', desc:'Spaghetti tossed and finished inside a hollowed wheel of Parmigiano and Pecorino.', price:8, tags:['veg'], icon:'wrap'},
+            {name:'Arancini & cannoli siciliani', desc:'A savoury-and-sweet Sicilian sampler of fried rice balls and ricotta-filled pastry shells.', price:6, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:2, id:'mercatino', name:'Mercatino di Gusti', country:'Local products', flag:'&#127811;', color:'#f7b99d',
@@ -58,10 +59,10 @@
       stands:[
         { id:'wien-imbiss', name:'Wien Imbiss', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Mixed sausages', desc:'Assorted grilled Austrian sausages served with mustard and tangy sauerkraut.', price:6, tags:[], icon:'grill'},
-            {name:'Bavarian pretzel', desc:'Soft-baked lye pretzel with a dark glossy crust and coarse sea salt.', price:4, tags:['veg'], icon:'bread'},
-            {name:'Canederli in brodo', desc:'Bread dumplings bound with egg, milk and speck, poached and served in hot broth.', price:6, tags:['veg'], icon:'soup'},
-            {name:'Apfelstrudel', desc:'Flaky pastry rolled around spiced apple, raisins and cinnamon, served warm with vanilla cream.', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Leberk&auml;se & Frikadeller', desc:'Sliced Austrian meatloaf and pan-fried meatballs, served with mustard.', price:7, tags:[], icon:'grill'},
+            {name:'Fresh Brezen', desc:'Soft-baked pretzel rolls served warm, a Bavarian-Austrian classic.', price:3, tags:['veg'], icon:'bread'},
+            {name:'Wiener Schnitzel', desc:'Breaded and pan-fried cutlet, served with a wedge of lemon.', price:9, tags:[], icon:'grill'},
+            {name:'Stinco al forno with sauerkraut', desc:'Roasted pork knuckle served with tangy braised sauerkraut.', price:10, tags:[], icon:'grill'}
           ]}
       ]},
     { num:4, id:'americhe', name:'Borgo Americhe', country:'USA &middot; Canada', flag:'&#127482;&#127480;', color:'#da090a',
@@ -69,9 +70,10 @@
       stands:[
         { id:'route66', name:'Route 66 Diner', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Classic cheeseburger', desc:'Grilled beef patty with melted cheese in a soft bun, served with fries.', price:8, tags:[], icon:'grill'},
-            {name:'Loaded nachos', desc:'Tortilla chips topped with melted cheese and sliced jalape&ntilde;os, Tex-Mex style.', price:6, tags:['veg'], icon:'wrap'},
-            {name:'Cheesecake', desc:'Baked cheesecake on a biscuit base, topped with a bright berry coulis.', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Smash burger with pulled pork', desc:'Griddle-smashed beef patty topped with slow-cooked pulled pork.', price:8, tags:[], icon:'grill'},
+            {name:'Paella Valenciana & Sangria', desc:'Traditional Spanish seafood paella served with a glass of fruity sangria.', price:9, tags:[], icon:'rice'},
+            {name:'Texas BBQ brisket', desc:'Slow-smoked beef brisket served alongside pulled pork and ribs.', price:10, tags:[], icon:'grill'},
+            {name:'Tex-Mex tacos & nachos', desc:'Soft tacos and loaded nachos, Tex-Mex style.', price:6, tags:['veg'], icon:'wrap'}
           ]}
       ]},
     { num:5, id:'mare', name:'Borgo Mare', country:'Seafood', flag:'&#127859;', color:'#0aa051',
@@ -79,9 +81,8 @@
       stands:[
         { id:'mare-nostrum', name:'Mare Nostrum', hours:FESTIVAL_HOURS_LABEL, loc:'Via Boccaccio',
           items:[
-            {name:'Mixed fried fish', desc:'Small whole fish, lightly floured and deep-fried crisp, served hot in a paper cone.', price:9, tags:[], icon:'grill'},
-            {name:'Octopus sandwich', desc:'Chargrilled octopus tentacle in a crusty roll with lemon and olive oil.', price:7, tags:[], icon:'wrap'},
-            {name:'Mussels marinara', desc:'Mussels steamed in tomato, garlic and white wine broth, served with toasted bread.', price:7, tags:[], icon:'soup'}
+            {name:'Frittura di mare', desc:'Fried calamari and mixed small fish, lightly floured and served hot with fries.', price:9, tags:[], icon:'grill'},
+            {name:'Fresh Adriatic fish', desc:'Daily fish selection landed by the Monfalcone fishing cooperative.', price:8, tags:[], icon:'soup'}
           ]}
       ]},
     { num:6, id:'australia', name:'Borgo Australia', country:'Oceania', flag:'&#127462;&#127482;', color:'#bc5455',
@@ -89,15 +90,15 @@
       stands:[
         { id:'outback-grill', name:'Outback Grill', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'Kangaroo burger', desc:'Lean grilled kangaroo patty in a bun, leaner and gamier than beef.', price:8, tags:[], icon:'grill'},
-            {name:'Meat pie', desc:'Hand-held pastry filled with minced beef and gravy, Australia&rsquo;s classic on-the-go snack.', price:5, tags:[], icon:'wrap'},
-            {name:'Lamington', desc:'Sponge cake dipped in chocolate icing and rolled in desiccated coconut.', price:3, tags:['veg'], icon:'sweet'}
+            {name:'Kangaroo steak', desc:'Lean grilled kangaroo, gamier and leaner than beef.', price:9, tags:[], icon:'grill'},
+            {name:'Ostrich fillet', desc:'Grilled ostrich meat, tender with a mild red-meat flavour.', price:9, tags:[], icon:'grill'},
+            {name:'Foster&rsquo;s beer', desc:'Ice-cold Australian lager, poured on tap.', price:4, tags:['veg','vegan'], icon:'drink'}
           ]},
         { id:'barbie-bar', name:'Barbie Bar', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'BBQ ribs', desc:'Pork ribs marinated and slow-cooked over coals, finished with a sticky barbecue glaze.', price:10, tags:[], icon:'grill'},
-            {name:'Damper bread', desc:'Dense soda-leavened bread traditionally baked over an open campfire, served in wedges.', price:3, tags:['veg'], icon:'bread'},
-            {name:'Tim Tam shake', desc:'Cold milkshake blended with crushed Tim Tam biscuits for a chocolate-malt flavour.', price:4, tags:['veg'], icon:'drink'}
+            {name:'Buffalo skewers', desc:'Grilled buffalo meat skewers, seasoned simply and char-grilled.', price:8, tags:[], icon:'skewer'},
+            {name:'Australian Angus burger', desc:'Juicy burger made from grass-fed Australian Angus beef.', price:8, tags:[], icon:'grill'},
+            {name:'Glass of Australian wine', desc:'A glass poured from the stand&rsquo;s wide selection of Australian wines.', price:4, tags:['veg','vegan'], icon:'drink'}
           ]}
       ]},
     { num:7, id:'africa', name:'Borgo Africa', country:'Maghreb &middot; West Africa', flag:'&#127463;&#127465;', color:'#74b3e1',
@@ -133,9 +134,10 @@
           ]},
         { id:'noodle-corner', name:'Noodle Corner', hours:FESTIVAL_HOURS_LABEL, loc:'Via Santa Chiara',
           items:[
-            {name:'Chicken ramen', desc:'Wheat noodles in savoury chicken broth, topped with a soft-boiled egg and spring onion.', price:8, tags:[], icon:'soup'},
-            {name:'Gyoza (6 pcs)', desc:'Pan-fried and steamed dumplings filled with seasoned meat and vegetables, with dipping sauce.', price:5, tags:[], icon:'wrap'},
-            {name:'Jasmine tea', desc:'Fragrant jasmine-scented green tea, served hot.', price:2, tags:['vegan'], icon:'drink'}
+            {name:'Gyoza', desc:'Pan-fried dumplings filled with seasoned meat and vegetables, with dipping sauce.', price:5, tags:[], icon:'wrap'},
+            {name:'Baozi', desc:'Soft steamed buns filled with a savoury meat filling.', price:4, tags:[], icon:'bread'},
+            {name:'Yakitori', desc:'Grilled skewers glazed in a savoury-sweet Japanese sauce.', price:6, tags:[], icon:'skewer'},
+            {name:'Takoyaki', desc:'Ball-shaped fried batter with octopus, topped with sauce and bonito flakes.', price:6, tags:[], icon:'wrap'}
           ]},
         { id:'sakura-sushi', name:'Sakura Sushi & Curry', hours:FESTIVAL_HOURS_LABEL, loc:'Via Boccaccio',
           items:[
@@ -155,9 +157,9 @@
           ]},
         { id:'gaucho-grill', name:'Gaucho Grill', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Churrasco skewer', desc:'Argentine-style grilled beef cubes, simply seasoned with coarse salt.', price:8, tags:['gluten-free'], icon:'skewer'},
-            {name:'Chimichurri bread', desc:'Toasted bread brushed with herby chimichurri sauce of parsley, garlic and vinegar.', price:3, tags:['vegan'], icon:'bread'},
-            {name:'Dulce de leche pancake', desc:'Folded pancake filled with dulce de leche, a slow-cooked milk caramel.', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Asado', desc:'Argentine slow-grilled beef ribs, simply seasoned with coarse salt.', price:9, tags:['gluten-free'], icon:'grill'},
+            {name:'Picanha', desc:'Grilled Brazilian sirloin cap, sliced thick and juicy.', price:9, tags:['gluten-free'], icon:'grill'},
+            {name:'Empanadas argentinas', desc:'Hand-folded pastry parcels filled with hand-cut seasoned meat, baked golden.', price:5, tags:[], icon:'wrap'}
           ]}
       ]},
     { num:10, id:'francia', name:'Borgo Francia', country:'France', flag:'&#127467;&#127479;', color:'#b98741',
@@ -181,9 +183,9 @@
       stands:[
         { id:'truck-11', name:'Truck 11', hours:FESTIVAL_HOURS_LABEL, loc:'Corso Verdi / Via Oberdan',
           items:[
-            {name:'Grilled gourmet sandwich', desc:'Toasted sandwich with quality fillings, finished with house-made sauces.', price:7, tags:[], icon:'grill'},
-            {name:'Hand-cut fries', desc:'Potatoes cut by hand and fried to order for an extra-crispy result.', price:4, tags:['veg'], icon:'wrap'},
-            {name:'Milkshake', desc:'Thick blended cold milkshake, available in a few classic flavours.', price:4, tags:['veg'], icon:'drink'}
+            {name:'Porkapolpetta', desc:'Pork meatball burger, a truck-food take on a classic patty.', price:7, tags:[], icon:'grill'},
+            {name:'R&ouml;sti di patate', desc:'Pan-fried grated potato cake, crisp outside and soft within.', price:5, tags:['veg'], icon:'wrap'},
+            {name:'Fried fish sandwich', desc:'Battered and fried fish fillet stuffed into a soft roll.', price:6, tags:[], icon:'wrap'}
           ]}
       ]},
     { num:12, id:'nordeuropa', name:'Borgo Nord Europa', country:'Scandinavia', flag:'&#127465;&#127472;', color:'#9ab70c',
@@ -191,9 +193,9 @@
       stands:[
         { id:'fjord-kitchen', name:'Fjord Kitchen', hours:FESTIVAL_HOURS_LABEL, loc:'Via Roma',
           items:[
-            {name:'Cured salmon', desc:'Gravlax-style cured salmon, thin-sliced on rye bread with a mustard-dill sauce.', price:8, tags:['gluten-free'], icon:'grill'},
-            {name:'Kanelbullar', desc:'Soft spiralled Swedish cinnamon bun, buttery and topped with pearl sugar.', price:3, tags:['veg'], icon:'sweet'},
-            {name:'Gl&ouml;gg', desc:'Nordic mulled wine spiced with cardamom, clove and cinnamon, with raisins and almonds.', price:4, tags:['veg'], icon:'drink'}
+            {name:'Irish Angus burger', desc:'Burger made from Irish Angus beef, served in a soft bun.', price:8, tags:[], icon:'grill'},
+            {name:'Angus arrosticini', desc:'Grilled skewers of Irish Angus beef, simply seasoned.', price:7, tags:[], icon:'skewer'},
+            {name:'Irish craft beer', desc:'Craft beer on tap from an Irish brewery.', price:5, tags:['veg'], icon:'drink'}
           ]}
       ]},
     { num:13, id:'europacentrale', name:'Borgo Europa Centrale', country:'Central Europe', flag:'&#127462;&#127481;', color:'#b3b8a4',
@@ -201,9 +203,10 @@
       stands:[
         { id:'mitteleuropa-kitchen', name:'Mitteleuropa Kitchen', hours:FESTIVAL_HOURS_LABEL, loc:'Via Roma',
           items:[
-            {name:'Speck dumplings', desc:'Dense dumplings studded with smoked cured pork, served plain or in broth.', price:6, tags:[], icon:'soup'},
-            {name:'Goulash with bread', desc:'Thick paprika-spiced beef stew simmered with onions and peppers, served with bread.', price:8, tags:[], icon:'soup'},
-            {name:'Strudel', desc:'Rolled pastry filled with spiced apple, served in slices with cream.', price:4, tags:['veg'], icon:'sweet'}
+            {name:'K&uuml;rt&otilde;skal&aacute;cs', desc:'Traditional Hungarian chimney cake, spit-baked and rolled in sugar, plain or filled.', price:5, tags:['veg'], icon:'sweet'},
+            {name:'Mini cr&ecirc;pes', desc:'Small sweet cr&ecirc;pes, Dutch and Czech style, with caramel or chocolate.', price:4, tags:['veg'], icon:'sweet'},
+            {name:'Czech goulash with bread', desc:'Thick paprika-spiced beef stew simmered with onions and peppers, served with bread.', price:8, tags:[], icon:'soup'},
+            {name:'Belgian double-fried fries', desc:'Twice-fried potatoes finished with a choice of Belgian sauces.', price:5, tags:['veg'], icon:'wrap'}
           ]}
       ]},
     { num:14, id:'associazioni', name:'Borgo Associazioni', country:'Local community', flag:'&#129309;', color:'#90d2e4',
@@ -211,9 +214,9 @@
       stands:[
         { id:'associazione-solidale', name:'Associazione Solidale', hours:FESTIVAL_HOURS_LABEL, loc:'Via Crispi',
           items:[
-            {name:'Traditional Gorizia dish', desc:'A savoury local recipe prepared by volunteers, changing stand by stand.', price:7, tags:[], icon:'soup'},
-            {name:'Homemade dessert', desc:'A home-style sweet made by the association&rsquo;s members, rotating daily.', price:3, tags:['veg'], icon:'sweet'},
-            {name:'House wine (glass)', desc:'A glass of locally sourced wine, poured by the association running the stand.', price:3, tags:['veg'], icon:'drink'}
+            {name:'Prosciutto in crusty bread', desc:'Carso-style cooked ham served in fresh bread, made by a local pro loco association.', price:5, tags:[], icon:'wrap'},
+            {name:'Tuscan bistecca & salumi', desc:'Grilled Tuscan steak with a board of cured meats, poured with a glass of vin santo.', price:9, tags:[], icon:'grill'},
+            {name:'Pumpkin gnocchi', desc:'Soft potato gnocchi flavoured with pumpkin, made by a local association.', price:6, tags:['veg'], icon:'soup'}
           ]}
       ]},
     { num:15, id:'fvg', name:'Borgo FVG', country:'Friuli Venezia Giulia', flag:'&#127470;&#127481;', color:'#c2804a',
@@ -221,9 +224,9 @@
       stands:[
         { id:'sapori-friuli', name:'Sapori del Friuli', hours:FESTIVAL_HOURS_LABEL, loc:'Piazza Municipio',
           items:[
-            {name:'Frico with polenta', desc:'Crisp pan-fried cheese-and-potato disc served with a wedge of soft polenta.', price:8, tags:['veg','gluten-free'], icon:'grill'},
-            {name:'San Daniele prosciutto board', desc:'Thin slices of long-aged San Daniele DOP prosciutto, served simply.', price:9, tags:['gluten-free'], icon:'grill'},
-            {name:'Gubana', desc:'Rolled pastry from the Friuli hills filled with walnuts, raisins, pine nuts and grappa.', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Frico triangles', desc:'Crisp pan-fried cheese-and-potato triangles, a Carnia speciality.', price:7, tags:['veg','gluten-free'], icon:'grill'},
+            {name:'Frittelle di mele', desc:'Warm apple fritters from the Carnia mountains, dusted with sugar.', price:4, tags:['veg'], icon:'sweet'},
+            {name:'Artisan chocolate pralines', desc:'Award-winning handmade chocolate pralines from a 51-year-old local chocolatier.', price:5, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:16, id:'slovenia-balcani', name:'Borgo Slovenia e Penisola Balcanica', country:'Slovenia &middot; Balkans', flag:'&#127480;&#127470;', color:'#db548b',
@@ -233,14 +236,14 @@
           items:[
             {name:'&Scaron;truklji', desc:'A rolled dumpling of thin dough around a savoury filling, sliced and served warm.', price:5, tags:['veg'], icon:'wrap'},
             {name:'Jota', desc:'Hearty Slovenian-Friulian soup of beans, sauerkraut and potato, slow-simmered until thick.', price:6, tags:['veg'], icon:'soup'},
-            {name:'Potica', desc:'Rolled Slovenian pastry filled with sweet walnut paste, spiralled through the dough.', price:3, tags:['veg'], icon:'sweet'}
+            {name:'Collio wine & hand-cut prosciutto', desc:'A glass of local Merlot or Malvazija with prosciutto sliced by hand.', price:6, tags:[], icon:'drink'}
           ]},
         { id:'cevapi-sarajevo', name:'&#262;evapi Sarajevo', hours:FESTIVAL_HOURS_LABEL, loc:'Via Crispi / Via De Gasperi',
           items:[
-            {name:'&#262;evapi (5 pcs)', desc:'Grilled rolls of seasoned minced mixed meat, served with raw chopped onion.', price:7, tags:[], icon:'grill'},
+            {name:'&#262;evap&#269;i&#263;i', desc:'Grilled rolls of seasoned minced mixed meat, served with raw chopped onion.', price:7, tags:[], icon:'grill'},
             {name:'Pljeskavica', desc:'Larger grilled mixed-meat patty, served with kajmak and ajvar.', price:7, tags:[], icon:'grill'},
-            {name:'Meat burek', desc:'Coiled filo pastry filled with seasoned minced meat, baked crisp.', price:4, tags:[], icon:'wrap'},
-            {name:'Baklava', desc:'Layered filo pastry with walnuts, baked and soaked in honey syrup.', price:3, tags:['veg'], icon:'sweet'}
+            {name:'Burek', desc:'Coiled filo pastry filled with seasoned minced meat, baked crisp.', price:4, tags:[], icon:'wrap'},
+            {name:'Mu&#269;kalica', desc:'Serbian stewed and grilled mixed meats in a spiced pepper sauce.', price:7, tags:[], icon:'soup'}
           ]}
       ]},
     { num:17, id:'borderless', name:'Borgo Borderless', country:'Fusion cuisine', flag:'&#127760;', color:'#07a7a3',
