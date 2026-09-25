@@ -246,6 +246,7 @@
 
   var DIET_LABELS = {veg:'Vegetarian', vegan:'Vegan', 'gluten-free':'Gluten-free'};
 
+  var CURRENT_DISH_PHOTOS = [];
   var ALL_ITEMS = [];
   BORGHI.forEach(function(b){
     b.stands.forEach(function(s){
@@ -274,6 +275,80 @@
   // are uploaded by individual contributors and are not ours to copy/rehost here —
   // the Photos tab links out to the official Google Maps listing for those instead.
   // The photos below were supplied directly for this app, taken on site at the festival.
+  // One illustrative photo per dish, keyed by the exact dish name string used in
+  // BORGHI below. Sourced from Openverse (openverse.org) — a Creative Commons
+  // search engine — never scraped from a plain Google Images search, since
+  // those results are almost entirely photos under full copyright with no
+  // licence for reuse. Every entry here keeps its required CC attribution and
+  // a link back to the original. A dish with no confident, clearly-matching
+  // licensed photo simply has no entry — never a mismatched or misleading one.
+  var DISH_PHOTOS = {
+    'Tagliatelle al rag&ugrave;': { src:'assets/dishes/tagliatelle-al-ragu.jpg', credit:'&ldquo;Trattoria del Moro - Dinner&rdquo; by BrownGuacamole', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/20688578@N00/2671843433' },
+    'Cured meats & cheese board': { src:'assets/dishes/cured-meats-cheese-board.jpg', credit:'&ldquo;charcuterie plate&rdquo; by gorgeoux', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/77597743@N00/2377583635' },
+    'Tiramis&ugrave;': { src:'assets/dishes/tiramisu.jpg', credit:'&ldquo;Tiramisu Dessert&rdquo; by Michal Kulesza', license:'CC0 1.0', source:'https://stocksnap.io/photo/tiramisu-dessert-32X9HJRG2N' },
+    'Mixed street food tasting': { src:'assets/dishes/mixed-street-food-tasting.jpg', credit:'&ldquo;Spicy Chicken with Handmade Noodles&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/4408727440' },
+    'Local jams & honey': { src:'assets/dishes/local-jams-honey.jpg', credit:'&ldquo;Honey Show 2&rdquo; by Vicky Brock', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/43881438@N00/225555649' },
+    'Fresh fruit juice': { src:'assets/dishes/fresh-fruit-juice.jpg', credit:'Photo by Flavio~', license:'CC BY 2.0', source:'https://www.flickr.com/photos/37873897@N06/5105184060' },
+    'Mixed sausages': { src:'assets/dishes/mixed-sausages.jpg', credit:'&ldquo;Hot Dogs on a Bun&rdquo; by TheBusyBrain', license:'CC BY 2.0', source:'https://www.flickr.com/photos/26176646@N04/2632651360' },
+    'Bavarian pretzel': { src:'assets/dishes/bavarian-pretzel.jpg', credit:'Photo by gruntzooki', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/37996580417@N01/37735661405' },
+    'Apfelstrudel': { src:'assets/dishes/apfelstrudel.jpg', credit:'&ldquo;Apple Strudel, Beef Pie, Coffee, Tea&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/4295379468' },
+    'Classic cheeseburger': { src:'assets/dishes/classic-cheeseburger.jpg', credit:'&ldquo;Cheeseburger and Fries&rdquo; by powerplantop', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/40726522@N02/5187810061' },
+    'Loaded nachos': { src:'assets/dishes/loaded-nachos.jpg', credit:'&ldquo;Eat Real Festival 2018&rdquo; by Thomas Hawk', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/51035555243@N01/44720907691' },
+    'Cheesecake': { src:'assets/dishes/cheesecake.jpg', credit:'&ldquo;Vegan Pumpkin Cheesecake Slice&rdquo; by tomatoes and friends', license:'CC BY 2.0', source:'https://www.flickr.com/photos/49845772@N03/7057275773' },
+    'Mixed fried fish': { src:'assets/dishes/mixed-fried-fish.jpg', credit:'&ldquo;fried fish platter&rdquo; by u m a m i', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/95842339@N00/3115539581' },
+    'Octopus sandwich': { src:'assets/dishes/octopus-sandwich.jpg', credit:'&ldquo;Greek Dish - Octopus Pita&rdquo; by TheBusyBrain', license:'CC BY 2.0', source:'https://www.flickr.com/photos/26176646@N04/2853800380' },
+    'Mussels marinara': { src:'assets/dishes/mussels-marinara.jpg', credit:'Photo by Galveston.com', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/22922790@N06/6856641989' },
+    'Kangaroo burger': { src:'assets/dishes/kangaroo-burger.jpg', credit:'&ldquo;kangaroo burgers&rdquo; by Phil Denton', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/37475039@N04/6111133858' },
+    'Meat pie': { src:'assets/dishes/meat-pie.jpg', credit:'&ldquo;A Bloody Good Australian Meat Pie&rdquo; by WestonEyes', license:'CC BY 2.0', source:'https://www.flickr.com/photos/130719407@N02/18727968000' },
+    'Lamington': { src:'assets/dishes/lamington.jpg', credit:'&ldquo;Lamington Cake&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/179695927' },
+    'BBQ ribs': { src:'assets/dishes/bbq-ribs.jpg', credit:'&ldquo;Aunty Linda&rsquo;s BBQ Pork Ribs&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/2307432906' },
+    'Damper bread': { src:'assets/dishes/damper-bread.jpg', credit:'Photo by Memarkyb', license:'CC BY 2.0', source:'https://www.flickr.com/photos/117415483@N02/27010662424' },
+    'Tim Tam shake': { src:'assets/dishes/tim-tam-shake.jpg', credit:'&ldquo;Chocolate Milkshake&rdquo; by Svadilfari', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/22280677@N07/3304202465' },
+    'Lamb tajine': { src:'assets/dishes/lamb-tajine.jpg', credit:'&ldquo;Vegetable Tajine&rdquo; by 16:9clue', license:'CC BY 2.0', source:'https://www.flickr.com/photos/53255320@N07/5342012559' },
+    'Vegetable couscous': { src:'assets/dishes/vegetable-couscous.jpg', credit:'&ldquo;Chicken & Vegetables Couscous&rdquo; by wEnDaLicious', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/25597828@N00/4686608157' },
+    'Mint tea': { src:'assets/dishes/mint-tea.jpg', credit:'&ldquo;Moroccan Mint Tea&rdquo; by simon_music', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/28878339@N00/6869050698' },
+    'Jollof rice': { src:'assets/dishes/jollof-rice.jpg', credit:'&ldquo;Jollof Rice&rdquo; by secretlondon123', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/25834786@N03/3013516170' },
+    'Beignet': { src:'assets/dishes/beignet.jpg', credit:'&ldquo;Caf&eacute; du Monde - Beignets&rdquo; by wallyg', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/70323761@N00/2469780708' },
+    'Spicy skewers': { src:'assets/dishes/spicy-skewers.jpg', credit:'&ldquo;Grilling kebab skewers&rdquo; by PersonalCreations.com', license:'CC BY 2.0', source:'https://www.flickr.com/photos/127294011@N07/14888757030' },
+    'Chicken shawarma': { src:'assets/dishes/chicken-shawarma.jpg', credit:'&ldquo;Chicken Shawafal&rdquo; by Laissez Fare', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/48153685@N02/6273990569' },
+    'Hummus & pita': { src:'assets/dishes/hummus-pita.jpg', credit:'&ldquo;Hummus Dip&rdquo; by ella.o', license:'CC BY 2.0', source:'https://www.flickr.com/photos/155807330@N05/30863436677' },
+    'Pistachio baklava': { src:'assets/dishes/pistachio-baklava.jpg', credit:'&ldquo;Pistachio Baklava and Coffee&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/1222363576' },
+    'Chicken ramen': { src:'assets/dishes/chicken-ramen.jpg', credit:'Free Japanese ramen bowl image', license:'CC0 1.0', source:'https://www.rawpixel.com/image/5925771/photo-image-public-domain-food-free' },
+    'Gyoza (6 pcs)': { src:'assets/dishes/gyoza.jpg', credit:'&ldquo;Gyoza, Dumpling&rdquo; by jetalone', license:'CC BY 2.0', source:'https://www.flickr.com/photos/92203585@N00/4695468991' },
+    'Mixed sushi platter (8 pcs)': { src:'assets/dishes/mixed-sushi-platter.jpg', credit:'&ldquo;Sushi Sashimi Platter&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/4004747776' },
+    'Chicken katsu curry': { src:'assets/dishes/chicken-katsu-curry.jpg', credit:'&ldquo;Chicken Katsu Curry Rice&rdquo; by jetalone', license:'CC BY 2.0', source:'https://www.flickr.com/photos/92203585@N00/5195010000' },
+    'Al pastor tacos (3 pcs)': { src:'assets/dishes/al-pastor-tacos.jpg', credit:'&ldquo;al pastor tacos&rdquo; by gsz', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/37601286@N06/9591725575' },
+    'Empanadas (2 pcs)': { src:'assets/dishes/empanadas.jpg', credit:'&ldquo;Seafood / Mariscos Empanadas&rdquo; by powerplantop', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/40726522@N02/5072212357' },
+    'Churros': { src:'assets/dishes/churros.jpg', credit:'&ldquo;Churros with Chocolate Sauce&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/348229335' },
+    'Churrasco skewer': { src:'assets/dishes/churrasco-skewer.jpg', credit:'&ldquo;Grilled Beef Skewers&rdquo; by wEnDaLicious', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/25597828@N00/4686608153' },
+    'Chimichurri bread': { src:'assets/dishes/chimichurri-bread.jpg', credit:'&ldquo;Chimichurri Bread&rdquo; by yummysmellsca', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/14125170@N02/22676132812' },
+    'Dulce de leche pancake': { src:'assets/dishes/dulce-de-leche-pancake.jpg', credit:'&ldquo;Torbellino de chocolate y Dulce de Leche&rdquo; by Sebasti&aacute;n-Dario', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/12817132@N07/3787363004' },
+    'Cheese cr&ecirc;pe': { src:'assets/dishes/cheese-crepe.jpg', credit:'&ldquo;Savory Chicken Crepes&rdquo; by ralph and jenny', license:'CC BY 2.0', source:'https://www.flickr.com/photos/92269745@N00/4544048268' },
+    'Nutella cr&ecirc;pe': { src:'assets/dishes/nutella-crepe.jpg', credit:'Photo by chotda', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/48600074651@N01/3511966974' },
+    'Fresh oysters (6 pcs)': { src:'assets/dishes/fresh-oysters.jpg', credit:'&ldquo;Fresh Oyster Plate&rdquo; by theforeignflash', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/67728864@N06/6632267621' },
+    'French cheese board': { src:'assets/dishes/french-cheese-board.jpg', credit:'&ldquo;French cheese board&rdquo; by tristanf', license:'CC BY 2.0', source:'https://www.flickr.com/photos/89056504@N00/3477151232' },
+    'Glass of white wine': { src:'assets/dishes/glass-white-wine.jpg', credit:'&ldquo;Glass of White Wine&rdquo; by RobW_', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/82362654@N00/807248389' },
+    'Grilled gourmet sandwich': { src:'assets/dishes/grilled-gourmet-sandwich.jpg', credit:'&ldquo;The Grilled Cheese Truck&rdquo; by ricardodiaz11', license:'CC BY 2.0', source:'https://www.flickr.com/photos/41652235@N00/4299181241' },
+    'Hand-cut fries': { src:'assets/dishes/hand-cut-fries.jpg', credit:'&ldquo;Hand-cut Fries&rdquo; by wEnDaLicious', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/25597828@N00/388794193' },
+    'Milkshake': { src:'assets/dishes/milkshake.jpg', credit:'Photo by Nealy-J', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/98057950@N00/2815228619' },
+    'Cured salmon': { src:'assets/dishes/cured-salmon.jpg', credit:'&ldquo;cured salmon&rdquo; by stu_spivack', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/35034346243@N01/2698299091' },
+    'Kanelbullar': { src:'assets/dishes/kanelbullar.jpg', credit:'&ldquo;Kanelbullar / Cinnamon Rolls&rdquo; by Sophie Gironi', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/53301411@N02/11007257296' },
+    'Gl&ouml;gg': { src:'assets/dishes/glogg.jpg', credit:'&ldquo;Glogg&rdquo; by jpellgen', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/27917561@N00/11264776456' },
+    'Speck dumplings': { src:'assets/dishes/speck-dumplings.jpg', credit:'&ldquo;Mandu (dumplings) in broth&rdquo; by Kaeru', license:'CC BY 2.0', source:'https://www.flickr.com/photos/51035756584@N01/15173384314' },
+    'Goulash with bread': { src:'assets/dishes/goulash-with-bread.jpg', credit:'&ldquo;Goulash&rdquo; by Dushan and Miae', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/97304820@N00/6054216923' },
+    'Strudel': { src:'assets/dishes/strudel.jpg', credit:'&ldquo;Apple Strudel - Sliced&rdquo; by tonydolor', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/16375307@N00/3568199351' },
+    'Traditional Gorizia dish': { src:'assets/dishes/traditional-gorizia-dish.jpg', credit:'&ldquo;Dinner at Il Pirata Delle Cinque Terre&rdquo; by JoeDuck', license:'CC BY 2.0', source:'https://www.flickr.com/photos/53175402@N00/4712286139' },
+    'House wine (glass)': { src:'assets/dishes/house-wine-glass.jpg', credit:'&ldquo;Two glasses of Red Wine&rdquo; by L.C.N&oslash;ttaasen', license:'CC BY 2.0', source:'https://www.flickr.com/photos/35166455@N00/3665139018' },
+    'San Daniele prosciutto board': { src:'assets/dishes/san-daniele-prosciutto-board.jpg', credit:'&ldquo;Meat + Cheese Tray&rdquo; by Eric Kilby', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/8749778@N06/3261977842' },
+    'Jota': { src:'assets/dishes/jota.jpg', credit:'Stew with sauerkraut, by T.Tseng', license:'CC BY 2.0', source:'https://www.flickr.com/photos/68147320@N02/9752984491' },
+    'Potica': { src:'assets/dishes/potica.jpg', credit:'&ldquo;Potica - Ljubljana, Slovenia&rdquo; by whl.travel', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/40382540@N08/4174348072' },
+    '&#262;evapi (5 pcs)': { src:'assets/dishes/cevapi.jpg', credit:'&ldquo;&#262;evapi&rdquo; by davduf', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/14483308@N00/720037874' },
+    'Meat burek': { src:'assets/dishes/meat-burek.jpg', credit:'&ldquo;Spicy Lamb Borek&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/4204721929' },
+    'Baklava': { src:'assets/dishes/baklava.jpg', credit:'&ldquo;Lebanese Baklava&rdquo; by lisamurray', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/22171342@N02/6429963321' },
+    'Kimchi taco': { src:'assets/dishes/kimchi-taco.jpg', credit:'&ldquo;KimChi Tacos&rdquo; by Pabo76', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/12687042@N00/5489980284' },
+    'Matcha tea gelato': { src:'assets/dishes/matcha-tea-gelato.jpg', credit:'&ldquo;Uji Matcha Ice Cream&rdquo; by avlxyz', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/10559879@N00/54577436644' }
+  };
+
   var PHOTOS = [
     { src:'assets/festival-map.jpg', alt:'Official Gusti di Frontiera festival map', credit:'Official festival map &middot; Comune di Gorizia' },
     { src:'assets/photos/opening-ceremony-crowd.jpg', alt:'Crowd gathered for the opening ceremony in front of a Gorizia church', credit:'Opening ceremony &middot; on site' },
@@ -378,12 +453,27 @@
     document.getElementById('stand-item-count').textContent = s.items.length+' DISHES';
     var menu = document.getElementById('stand-menu');
     menu.innerHTML = '';
+    CURRENT_DISH_PHOTOS = [];
     s.items.forEach(function(it){
       var row = document.createElement('div');
       row.className = 'menu-item';
       var tagsHtml = it.tags.map(function(t){return '<span class="tag-chip">'+(DIET_LABELS[t]||t)+'</span>';}).join('');
+      // Look up by the raw (still HTML-entity-encoded) name string here, before it
+      // goes through innerHTML — the browser would decode entities like &ugrave;
+      // into their real character once parsed, so a later re-lookup from a
+      // data-attribute value would silently fail to match. Referencing this
+      // dish's photo by array index instead sidesteps that round-trip entirely.
+      var photo = DISH_PHOTOS[it.name];
+      var iconHtml;
+      if(photo){
+        var idx = CURRENT_DISH_PHOTOS.length;
+        CURRENT_DISH_PHOTOS.push({ photo: photo, name: it.name });
+        iconHtml = '<button class="item-icon item-icon-photo" data-dish-photo-idx="'+idx+'" style="background-image:url(&quot;'+photo.src+'&quot;)" aria-label="View photo of '+it.name+'"><span class="item-icon-zoom">&#128269;</span></button>';
+      } else {
+        iconHtml = '<div class="item-icon" style="background:'+b.color+'22">'+ICONS[it.icon]+'</div>';
+      }
       row.innerHTML =
-        '<div class="item-icon" style="background:'+b.color+'22">'+ICONS[it.icon]+'</div>'+
+        iconHtml+
         '<div class="item-body">'+
           '<div class="item-name">'+it.name+'</div>'+
           '<div class="item-desc">'+it.desc+'</div>'+
@@ -557,6 +647,7 @@
     var videoTile = e.target.closest('[data-video]');
     var favBtn = e.target.closest('#fav-toggle');
     var photoTile = e.target.closest('[data-photo-index]');
+    var dishPhotoBtn = e.target.closest('[data-dish-photo-idx]');
 
     if(e.target.closest('a[href]')) return; // let real links behave normally
 
@@ -586,6 +677,17 @@
         document.getElementById('lightbox-img').src = photo.src;
         document.getElementById('lightbox-img').alt = photo.alt;
         document.getElementById('lightbox-credit').innerHTML = photo.credit;
+        document.getElementById('photo-lightbox').hidden = false;
+      }
+      return;
+    }
+    if(dishPhotoBtn){
+      var dishEntry = CURRENT_DISH_PHOTOS[Number(dishPhotoBtn.getAttribute('data-dish-photo-idx'))];
+      if(dishEntry){
+        document.getElementById('lightbox-img').src = dishEntry.photo.src;
+        document.getElementById('lightbox-img').alt = dishPhotoBtn.getAttribute('aria-label') || '';
+        document.getElementById('lightbox-credit').innerHTML = dishEntry.photo.credit+' &middot; '+dishEntry.photo.license+
+          ' &middot; <a href="'+dishEntry.photo.source+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">source</a>';
         document.getElementById('photo-lightbox').hidden = false;
       }
       return;

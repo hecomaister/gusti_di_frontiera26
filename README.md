@@ -4,11 +4,12 @@ Guida non ufficiale, mobile-first, per il festival **Gusti di Frontiera** a Gori
 
 ## Contenuti
 
-- **Home**: statistiche del festival ed elenco dei 17 borghi ufficiali
-- **Borgo → Stand → Menu**: dettaglio di ogni borgo, i suoi stand, orari, posizione e menu con prezzi
-- **Mappa**: mappa ufficiale del festival (`assets/festival-map.jpg`) con pin cliccabili sovrapposti per ciascun borgo
+- **Home**: statistiche del festival, contatore visite ed elenco dei 17 borghi ufficiali
+- **Borgo → Stand → Menu**: dettaglio di ogni borgo, i suoi stand, orari, posizione e menu con prezzi. Ogni piatto con una foto disponibile mostra un&rsquo;icona cliccabile (invece dell&rsquo;emoji generica) che apre la foto a schermo intero con licenza e link alla fonte
+- **Mappa**: mappa ufficiale del festival (`assets/festival-map.jpg`) con una griglia di pulsanti numerati per ciascun borgo (niente pin sovrapposti che si accavallano)
 - **Cerca**: ricerca testuale sui piatti/stand/borghi, con filtri per prezzo, dieta (vegetariano, vegano, senza glutine) e borgo
 - **Preferiti**: salvataggio locale (localStorage) degli stand da non perdere
+- **Foto**: galleria di foto scattate sul posto, più link a Google Maps e Instagram per le foto dei visitatori (mai copiate o ripubblicate senza permesso)
 
 ## Nota sui dati
 
@@ -20,9 +21,17 @@ Il banner in alto nell'app dichiara onestamente che si tratta di una guida indip
 index.html               pagina unica con tutte le viste (head con meta SEO multilingua)
 js/app.js                dati dei 17 borghi/stand/menu + logica dell'app (routing, preferiti, ricerca, mappa)
 assets/festival-map.jpg  mappa ufficiale del festival
+assets/photos/           foto scattate sul posto per la pagina "Foto"
+assets/dishes/           una foto illustrativa per piatto (vedi sotto)
 borghi-mappa.json        dati grezzi di verifica delle posizioni sulla mappa ufficiale
 piano-gusti-digitali.md  piano editoriale e note di raccolta dati
 ```
+
+## Foto dei piatti
+
+Ogni foto in `assets/dishes/` viene da [Openverse](https://openverse.org) (un motore di ricerca per immagini con licenza Creative Commons), **mai da una ricerca Google Immagini generica**: quei risultati sono quasi sempre foto protette da copyright pieno, senza alcuna licenza che ne permetta la ripubblicazione. Ogni foto usata mantiene l'attribuzione richiesta dalla sua licenza CC, visibile toccando l'icona del piatto (oggetto `DISH_PHOTOS` in `js/app.js`, con licenza e link alla fonte).
+
+Non tutti i piatti hanno una foto: quando la ricerca non restituiva un risultato chiaramente pertinente (es. "Pljeskavica"), il piatto resta senza foto — mai con un'immagine sbagliata o fuorviante solo per riempire lo spazio.
 
 ## Sviluppo locale
 
