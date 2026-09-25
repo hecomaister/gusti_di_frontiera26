@@ -333,12 +333,12 @@
     'Milkshake': { src:'assets/dishes/milkshake.jpg', credit:'Photo by Nealy-J', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/98057950@N00/2815228619' },
     'Cured salmon': { src:'assets/dishes/cured-salmon.jpg', credit:'&ldquo;cured salmon&rdquo; by stu_spivack', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/35034346243@N01/2698299091' },
     'Kanelbullar': { src:'assets/dishes/kanelbullar.jpg', credit:'&ldquo;Kanelbullar / Cinnamon Rolls&rdquo; by Sophie Gironi', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/53301411@N02/11007257296' },
-    'Gl&ouml;gg': { src:'assets/dishes/glogg.jpg', credit:'&ldquo;Glogg&rdquo; by jpellgen', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/27917561@N00/11264776456' },
-    'Speck dumplings': { src:'assets/dishes/speck-dumplings.jpg', credit:'&ldquo;Mandu (dumplings) in broth&rdquo; by Kaeru', license:'CC BY 2.0', source:'https://www.flickr.com/photos/51035756584@N01/15173384314' },
+    'Gl&ouml;gg': { src:'assets/dishes/glogg.jpg', credit:'&ldquo;Mulled Wine&rdquo; by Ian Hayhurst', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/7213502@N03/4257407179' },
+    'Speck dumplings': { src:'assets/dishes/speck-dumplings.jpg', credit:'&ldquo;Austrian Bread Dumpling&rdquo; by Bibi&rsquo;s Culinary Journey', license:'CC BY 2.0', source:'https://www.flickr.com/photos/57880801@N02/5364652749' },
     'Goulash with bread': { src:'assets/dishes/goulash-with-bread.jpg', credit:'&ldquo;Goulash&rdquo; by Dushan and Miae', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/97304820@N00/6054216923' },
     'Strudel': { src:'assets/dishes/strudel.jpg', credit:'&ldquo;Apple Strudel - Sliced&rdquo; by tonydolor', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/16375307@N00/3568199351' },
     'Traditional Gorizia dish': { src:'assets/dishes/traditional-gorizia-dish.jpg', credit:'&ldquo;Dinner at Il Pirata Delle Cinque Terre&rdquo; by JoeDuck', license:'CC BY 2.0', source:'https://www.flickr.com/photos/53175402@N00/4712286139' },
-    'House wine (glass)': { src:'assets/dishes/house-wine-glass.jpg', credit:'&ldquo;Two glasses of Red Wine&rdquo; by L.C.N&oslash;ttaasen', license:'CC BY 2.0', source:'https://www.flickr.com/photos/35166455@N00/3665139018' },
+    'House wine (glass)': { src:'assets/dishes/house-wine-glass.jpg', credit:'&ldquo;One glass of red wine&rdquo; by quinn.anya', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/53326337@N00/3970183707' },
     'San Daniele prosciutto board': { src:'assets/dishes/san-daniele-prosciutto-board.jpg', credit:'&ldquo;Meat + Cheese Tray&rdquo; by Eric Kilby', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/8749778@N06/3261977842' },
     'Jota': { src:'assets/dishes/jota.jpg', credit:'Stew with sauerkraut, by T.Tseng', license:'CC BY 2.0', source:'https://www.flickr.com/photos/68147320@N02/9752984491' },
     'Potica': { src:'assets/dishes/potica.jpg', credit:'&ldquo;Potica - Ljubljana, Slovenia&rdquo; by whl.travel', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/40382540@N08/4174348072' },
@@ -686,7 +686,9 @@
       if(dishEntry){
         document.getElementById('lightbox-img').src = dishEntry.photo.src;
         document.getElementById('lightbox-img').alt = dishPhotoBtn.getAttribute('aria-label') || '';
-        document.getElementById('lightbox-credit').innerHTML = dishEntry.photo.credit+' &middot; '+dishEntry.photo.license+
+        document.getElementById('lightbox-credit').innerHTML =
+          '<b>Symbolic photo &mdash; not the actual dish served at this stand.</b><br>'+
+          dishEntry.photo.credit+' &middot; '+dishEntry.photo.license+
           ' &middot; <a href="'+dishEntry.photo.source+'" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">source</a>';
         document.getElementById('photo-lightbox').hidden = false;
       }
