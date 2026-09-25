@@ -645,79 +645,11 @@
   start();
 
   // ---------- Global visits counter ----------
-  // Free, key-less pageview counter: geojs.io resolves the visitor's country,
-  // kvdb.io stores a shared {total, countries} JSON blob (a plain
-  // read-then-write with no auth, so rare double-counting under concurrent
-  // visits is possible — acceptable for a fan-made counter, not real analytics).
-  //
-  // NOTE: kvdb.io now requires the bucket's email to be verified before writes
-  // succeed (a policy change since this pattern was first written). The bucket
-  // below is a placeholder — until its email is verified, PUT requests will
-  // fail and this widget just stays hidden (fails silently, never shows a fake
-  // number). To make it live: create your own bucket with
-  // `curl -d "email=you@example.com" https://kvdb.io/`, click the verification
-  // link kvdb.io emails you, then replace VISITS_BUCKET below with that ID.
-  var VISITS_BUCKET = 'CX1escdLabZh24wvkzDu4A';
-  var VISITS_URL = 'https://kvdb.io/' + VISITS_BUCKET + '/stats';
-
-  function flagEmoji(cc){
-    if(!cc || cc.length!==2 || cc==='XX') return '\u{1F3F3}️';
-    var upper = cc.toUpperCase();
-    var points = [];
-    for(var i=0;i<upper.length;i++){ points.push(127397 + upper.charCodeAt(i)); }
-    return String.fromCodePoint.apply(null, points);
-  }
-
-  function renderVisitStats(stats){
-    var totalEl = document.getElementById('visits-total');
-    var flagsEl = document.getElementById('visits-flags');
-    var card = document.getElementById('visits-card');
-    if(!totalEl || !flagsEl || !card) return;
-
-    totalEl.textContent = (stats.total || 0).toLocaleString();
-
-    var entries = Object.keys(stats.countries || {}).map(function(cc){
-      return { cc: cc, n: stats.countries[cc] };
-    });
-    entries.sort(function(a,b){ return b.n - a.n; });
-    entries = entries.slice(0, 8);
-
-    flagsEl.innerHTML = '';
-    entries.forEach(function(e){
-      var chip = document.createElement('span');
-      chip.className = 'visits-flag-chip';
-      chip.innerHTML = flagEmoji(e.cc) + ' <b>' + e.n + '</b>';
-      flagsEl.appendChild(chip);
-    });
-
-    card.hidden = false;
-  }
-
-  function initVisitCounter(){
-    fetch('https://get.geojs.io/v1/ip/country.json')
-      .then(function(r){ return r.ok ? r.json() : {}; })
-      .catch(function(){ return {}; })
-      .then(function(geo){
-        var cc = (geo && geo.country) ? geo.country : 'XX';
-        return fetch(VISITS_URL)
-          .then(function(r){ return r.ok ? r.json() : null; })
-          .catch(function(){ return null; })
-          .then(function(stats){
-            if(!stats || typeof stats !== 'object'){ stats = { total:0, countries:{} }; }
-            if(!stats.countries){ stats.countries = {}; }
-            stats.total = (stats.total || 0) + 1;
-            stats.countries[cc] = (stats.countries[cc] || 0) + 1;
-
-            // Only reveal the counter once the write actually lands — a locally
-            // incremented number that silently fails to save (e.g. the kvdb.io
-            // bucket's email isn't verified yet) would just be a frozen fake
-            // count on every future visit, which we never want to show.
-            return fetch(VISITS_URL, { method:'PUT', body: JSON.stringify(stats) })
-              .then(function(putRes){ if(putRes.ok) renderVisitStats(stats); });
-          });
-      })
-      .catch(function(){ /* fail silently: card stays hidden, no fake number shown */ });
-  }
-
-  initVisitCounter();
+  // The counter itself is a plain <img> in index.html pointing at
+  // visitor-badge.laobi.icu (a free, key-less hit-counter badge with no
+  // signup/verification step — unlike kvdb.io, which now requires a verified
+  // owner email before it accepts writes). Every image request increments a
+  // server-side count and returns an SVG with the new total baked in, so no
+  // JS is needed here at all; the badge's own onerror attribute hides the
+  // card if the service is ever unreachable.
 })();
