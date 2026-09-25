@@ -38,9 +38,9 @@
       stands:[
         { id:'sapori-italia', name:"Sapori d'Italia", hours:FESTIVAL_HOURS_LABEL, loc:'Via Garibaldi',
           items:[
-            {name:'Tagliatelle al rag&ugrave;', desc:'Fresh handmade pasta', price:7, tags:[], icon:'wrap'},
-            {name:'Cured meats & cheese board', desc:'Regional selection', price:8, tags:[], icon:'grill'},
-            {name:'Tiramis&ugrave;', desc:'Classic recipe', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Tagliatelle al rag&ugrave;', desc:'Fresh hand-rolled egg pasta tossed with a slow-simmered beef and pork rag&ugrave;, topped with grated Parmigiano.', price:7, tags:[], icon:'wrap'},
+            {name:'Cured meats & cheese board', desc:'Thin-sliced prosciutto, salame and coppa with two aged regional cheeses, served with bread.', price:8, tags:[], icon:'grill'},
+            {name:'Tiramis&ugrave;', desc:'Ladyfinger biscuits soaked in espresso, layered with whipped mascarpone cream and dusted with cocoa.', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:2, id:'mercatino', name:'Mercatino di Gusti', country:'Local products', flag:'&#127811;', color:'#f7b99d',
@@ -48,9 +48,9 @@
       stands:[
         { id:'mercatino-corner', name:'Mercatino Corner', hours:FESTIVAL_HOURS_LABEL, loc:'Piazza Battisti',
           items:[
-            {name:'Mixed street food tasting', desc:'Rotating selection', price:6, tags:[], icon:'wrap'},
-            {name:'Local jams & honey', desc:'Take-away jar', price:5, tags:['veg','vegan'], icon:'sweet'},
-            {name:'Fresh fruit juice', desc:'Freshly squeezed', price:3, tags:['vegan'], icon:'drink'}
+            {name:'Mixed street food tasting', desc:'A rotating sampler of small plates from the stand&rsquo;s daily specials, ideal for grazing.', price:6, tags:[], icon:'wrap'},
+            {name:'Local jams & honey', desc:'Take-away jars of artisan honey and fruit preserves from small local producers.', price:5, tags:['veg','vegan'], icon:'sweet'},
+            {name:'Fresh fruit juice', desc:'Squeezed to order from seasonal fruit, no added sugar, served cold.', price:3, tags:['vegan'], icon:'drink'}
           ]}
       ]},
     { num:3, id:'austria', name:'Borgo Austria', country:'Austria', flag:'&#127462;&#127481;', color:'#a19fc5',
@@ -58,10 +58,10 @@
       stands:[
         { id:'wien-imbiss', name:'Wien Imbiss', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Mixed sausages', desc:'With mustard and sauerkraut', price:6, tags:[], icon:'grill'},
-            {name:'Bavarian pretzel', desc:'Soft-baked, coarse salt', price:4, tags:['veg'], icon:'bread'},
-            {name:'Canederli in brodo', desc:'Bread dumplings in broth', price:6, tags:['veg'], icon:'soup'},
-            {name:'Apfelstrudel', desc:'Apple strudel with vanilla cream', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Mixed sausages', desc:'Assorted grilled Austrian sausages served with mustard and tangy sauerkraut.', price:6, tags:[], icon:'grill'},
+            {name:'Bavarian pretzel', desc:'Soft-baked lye pretzel with a dark glossy crust and coarse sea salt.', price:4, tags:['veg'], icon:'bread'},
+            {name:'Canederli in brodo', desc:'Bread dumplings bound with egg, milk and speck, poached and served in hot broth.', price:6, tags:['veg'], icon:'soup'},
+            {name:'Apfelstrudel', desc:'Flaky pastry rolled around spiced apple, raisins and cinnamon, served warm with vanilla cream.', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:4, id:'americhe', name:'Borgo Americhe', country:'USA &middot; Canada', flag:'&#127482;&#127480;', color:'#da090a',
@@ -69,9 +69,9 @@
       stands:[
         { id:'route66', name:'Route 66 Diner', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Classic cheeseburger', desc:'With fries', price:8, tags:[], icon:'grill'},
-            {name:'Loaded nachos', desc:'Tex-Mex style, cheese and jalapeños', price:6, tags:['veg'], icon:'wrap'},
-            {name:'Cheesecake', desc:'Slice with berry coulis', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Classic cheeseburger', desc:'Grilled beef patty with melted cheese in a soft bun, served with fries.', price:8, tags:[], icon:'grill'},
+            {name:'Loaded nachos', desc:'Tortilla chips topped with melted cheese and sliced jalape&ntilde;os, Tex-Mex style.', price:6, tags:['veg'], icon:'wrap'},
+            {name:'Cheesecake', desc:'Baked cheesecake on a biscuit base, topped with a bright berry coulis.', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:5, id:'mare', name:'Borgo Mare', country:'Seafood', flag:'&#127859;', color:'#0aa051',
@@ -79,9 +79,9 @@
       stands:[
         { id:'mare-nostrum', name:'Mare Nostrum', hours:FESTIVAL_HOURS_LABEL, loc:'Via Boccaccio',
           items:[
-            {name:'Mixed fried fish', desc:'Assorted fried small fish', price:9, tags:[], icon:'grill'},
-            {name:'Octopus sandwich', desc:'Grilled octopus', price:7, tags:[], icon:'wrap'},
-            {name:'Mussels marinara', desc:'With toasted bread', price:7, tags:[], icon:'soup'}
+            {name:'Mixed fried fish', desc:'Small whole fish, lightly floured and deep-fried crisp, served hot in a paper cone.', price:9, tags:[], icon:'grill'},
+            {name:'Octopus sandwich', desc:'Chargrilled octopus tentacle in a crusty roll with lemon and olive oil.', price:7, tags:[], icon:'wrap'},
+            {name:'Mussels marinara', desc:'Mussels steamed in tomato, garlic and white wine broth, served with toasted bread.', price:7, tags:[], icon:'soup'}
           ]}
       ]},
     { num:6, id:'australia', name:'Borgo Australia', country:'Oceania', flag:'&#127462;&#127482;', color:'#bc5455',
@@ -89,15 +89,15 @@
       stands:[
         { id:'outback-grill', name:'Outback Grill', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'Kangaroo burger', desc:'Grilled kangaroo burger', price:8, tags:[], icon:'grill'},
-            {name:'Meat pie', desc:'Classic meat-filled savoury pie', price:5, tags:[], icon:'wrap'},
-            {name:'Lamington', desc:'Sponge cake with chocolate and coconut', price:3, tags:['veg'], icon:'sweet'}
+            {name:'Kangaroo burger', desc:'Lean grilled kangaroo patty in a bun, leaner and gamier than beef.', price:8, tags:[], icon:'grill'},
+            {name:'Meat pie', desc:'Hand-held pastry filled with minced beef and gravy, Australia&rsquo;s classic on-the-go snack.', price:5, tags:[], icon:'wrap'},
+            {name:'Lamington', desc:'Sponge cake dipped in chocolate icing and rolled in desiccated coconut.', price:3, tags:['veg'], icon:'sweet'}
           ]},
         { id:'barbie-bar', name:'Barbie Bar', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'BBQ ribs', desc:'Marinated ribs, slow-cooked over coals', price:10, tags:[], icon:'grill'},
-            {name:'Damper bread', desc:'Traditional Australian campfire bread', price:3, tags:['veg'], icon:'bread'},
-            {name:'Tim Tam shake', desc:'Chocolate-biscuit milkshake', price:4, tags:['veg'], icon:'drink'}
+            {name:'BBQ ribs', desc:'Pork ribs marinated and slow-cooked over coals, finished with a sticky barbecue glaze.', price:10, tags:[], icon:'grill'},
+            {name:'Damper bread', desc:'Dense soda-leavened bread traditionally baked over an open campfire, served in wedges.', price:3, tags:['veg'], icon:'bread'},
+            {name:'Tim Tam shake', desc:'Cold milkshake blended with crushed Tim Tam biscuits for a chocolate-malt flavour.', price:4, tags:['veg'], icon:'drink'}
           ]}
       ]},
     { num:7, id:'africa', name:'Borgo Africa', country:'Maghreb &middot; West Africa', flag:'&#127463;&#127465;', color:'#74b3e1',
@@ -105,21 +105,21 @@
       stands:[
         { id:'marrakech-tajine', name:'Marrakech Tajine', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'Lamb tajine', desc:'Slow-cooked with dried apricots and almonds', price:9, tags:['gluten-free'], icon:'soup'},
-            {name:'Vegetable couscous', desc:'Couscous with seasonal vegetables', price:6, tags:['vegan'], icon:'rice'},
-            {name:'Mint tea', desc:'Served hot and sweetened', price:2, tags:['vegan'], icon:'drink'}
+            {name:'Lamb tajine', desc:'Lamb slow-cooked in a clay tajine with dried apricots, almonds and warm spices.', price:9, tags:['gluten-free'], icon:'soup'},
+            {name:'Vegetable couscous', desc:'Steamed couscous topped with seasonal vegetables simmered in a lightly spiced broth.', price:6, tags:['vegan'], icon:'rice'},
+            {name:'Mint tea', desc:'Green tea brewed with fresh mint and generously sweetened, served hot.', price:2, tags:['vegan'], icon:'drink'}
           ]},
         { id:'sahel-kitchen', name:'Sahel Kitchen', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'Chicken yassa', desc:'Senegalese-style, marinated in lemon and onion', price:7, tags:['gluten-free'], icon:'grill'},
-            {name:'Jollof rice', desc:'Spiced tomato rice', price:5, tags:['vegan'], icon:'rice'},
-            {name:'Beignet', desc:'Sugared fritters', price:2, tags:['veg'], icon:'sweet'}
+            {name:'Chicken yassa', desc:'Senegalese chicken marinated in lemon and mustard, braised in caramelised onions.', price:7, tags:['gluten-free'], icon:'grill'},
+            {name:'Jollof rice', desc:'West African rice cooked in a spiced tomato-and-pepper base, smoky and savoury.', price:5, tags:['vegan'], icon:'rice'},
+            {name:'Beignet', desc:'Yeasted dough fried until golden and rolled in sugar while still warm.', price:2, tags:['veg'], icon:'sweet'}
           ]},
         { id:'savana-grill', name:'Savana Grill', hours:FESTIVAL_HOURS_LABEL, loc:'Via Brass',
           items:[
-            {name:'Spicy skewers', desc:'Suya marinade, roasted peanuts', price:6, tags:[], icon:'skewer'},
-            {name:'Vegetable couscous', desc:'Couscous with seasonal vegetables', price:5, tags:['vegan'], icon:'rice'},
-            {name:'Mint tea', desc:'Served hot and sweetened', price:2, tags:['vegan'], icon:'drink'}
+            {name:'Spicy skewers', desc:'Grilled skewers coated in a suya spice rub, finished with roasted crushed peanuts.', price:6, tags:[], icon:'skewer'},
+            {name:'Vegetable couscous', desc:'Steamed couscous topped with seasonal vegetables simmered in a lightly spiced broth.', price:5, tags:['vegan'], icon:'rice'},
+            {name:'Mint tea', desc:'Green tea brewed with fresh mint and generously sweetened, served hot.', price:2, tags:['vegan'], icon:'drink'}
           ]}
       ]},
     { num:8, id:'oriente', name:'Borgo Oriente', country:'Middle East &middot; Asia', flag:'&#127826;', color:'#ee9610',
@@ -127,21 +127,21 @@
       stands:[
         { id:'shawarma-house', name:'Shawarma House', hours:FESTIVAL_HOURS_LABEL, loc:'Via Santa Chiara',
           items:[
-            {name:'Chicken shawarma', desc:'Flatbread, yoghurt and tahini sauces', price:6, tags:[], icon:'wrap'},
-            {name:'Hummus & pita', desc:'With oil and paprika', price:4, tags:['vegan'], icon:'soup'},
-            {name:'Pistachio baklava', desc:'Sweet pastry, crushed pistachios', price:3, tags:['veg'], icon:'sweet'}
+            {name:'Chicken shawarma', desc:'Spit-roasted marinated chicken shaved into flatbread with yoghurt and tahini sauces.', price:6, tags:[], icon:'wrap'},
+            {name:'Hummus & pita', desc:'Chickpea and tahini dip finished with olive oil and paprika, served with warm pita.', price:4, tags:['vegan'], icon:'soup'},
+            {name:'Pistachio baklava', desc:'Crisp filo layers with crushed pistachios, baked and soaked in sweet syrup.', price:3, tags:['veg'], icon:'sweet'}
           ]},
         { id:'noodle-corner', name:'Noodle Corner', hours:FESTIVAL_HOURS_LABEL, loc:'Via Santa Chiara',
           items:[
-            {name:'Chicken ramen', desc:'Noodle soup, soft egg, spring onion', price:8, tags:[], icon:'soup'},
-            {name:'Gyoza (6 pcs)', desc:'Filled steamed dumplings', price:5, tags:[], icon:'wrap'},
-            {name:'Jasmine tea', desc:'Served hot', price:2, tags:['vegan'], icon:'drink'}
+            {name:'Chicken ramen', desc:'Wheat noodles in savoury chicken broth, topped with a soft-boiled egg and spring onion.', price:8, tags:[], icon:'soup'},
+            {name:'Gyoza (6 pcs)', desc:'Pan-fried and steamed dumplings filled with seasoned meat and vegetables, with dipping sauce.', price:5, tags:[], icon:'wrap'},
+            {name:'Jasmine tea', desc:'Fragrant jasmine-scented green tea, served hot.', price:2, tags:['vegan'], icon:'drink'}
           ]},
         { id:'sakura-sushi', name:'Sakura Sushi & Curry', hours:FESTIVAL_HOURS_LABEL, loc:'Via Boccaccio',
           items:[
-            {name:'Mixed sushi platter (8 pcs)', desc:'Nigiri and maki selection', price:9, tags:['gluten-free'], icon:'rice'},
-            {name:'Chicken katsu curry', desc:'Breaded chicken, rice, curry sauce', price:8, tags:[], icon:'wrap'},
-            {name:'Edamame', desc:'Steamed and salted soybeans', price:3, tags:['vegan','gluten-free'], icon:'soup'}
+            {name:'Mixed sushi platter (8 pcs)', desc:'Assorted nigiri and maki rolls offering a range of fish and toppings.', price:9, tags:['gluten-free'], icon:'rice'},
+            {name:'Chicken katsu curry', desc:'Breaded fried chicken cutlet over rice, covered in mild Japanese-style curry sauce.', price:8, tags:[], icon:'wrap'},
+            {name:'Edamame', desc:'Steamed and lightly salted soybean pods, eaten straight from the shell.', price:3, tags:['vegan','gluten-free'], icon:'soup'}
           ]}
       ]},
     { num:9, id:'latinoamericano', name:'Borgo Latino Americano', country:'Mexico &middot; Argentina', flag:'&#127765;', color:'#99639c',
@@ -149,15 +149,15 @@
       stands:[
         { id:'taqueria-frontera', name:'Taquer&iacute;a Frontera', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Al pastor tacos (3 pcs)', desc:'Marinated pork, pineapple, coriander', price:6, tags:[], icon:'wrap'},
-            {name:'Empanadas (2 pcs)', desc:'Filled with hand-cut meat', price:5, tags:[], icon:'wrap'},
-            {name:'Churros', desc:'With hot chocolate', price:3, tags:['veg'], icon:'sweet'}
+            {name:'Al pastor tacos (3 pcs)', desc:'Corn tortillas with chilli-marinated pork, topped with pineapple and coriander.', price:6, tags:[], icon:'wrap'},
+            {name:'Empanadas (2 pcs)', desc:'Hand-folded pastry parcels filled with hand-cut seasoned meat, baked golden.', price:5, tags:[], icon:'wrap'},
+            {name:'Churros', desc:'Ridged fried dough sticks rolled in sugar, served with thick hot chocolate for dipping.', price:3, tags:['veg'], icon:'sweet'}
           ]},
         { id:'gaucho-grill', name:'Gaucho Grill', hours:FESTIVAL_HOURS_LABEL, loc:'Via Cadorna',
           items:[
-            {name:'Churrasco skewer', desc:'Argentine-style grilled beef', price:8, tags:['gluten-free'], icon:'skewer'},
-            {name:'Chimichurri bread', desc:'Toasted bread with chimichurri sauce', price:3, tags:['vegan'], icon:'bread'},
-            {name:'Dulce de leche pancake', desc:'Folded pancake with caramel filling', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Churrasco skewer', desc:'Argentine-style grilled beef cubes, simply seasoned with coarse salt.', price:8, tags:['gluten-free'], icon:'skewer'},
+            {name:'Chimichurri bread', desc:'Toasted bread brushed with herby chimichurri sauce of parsley, garlic and vinegar.', price:3, tags:['vegan'], icon:'bread'},
+            {name:'Dulce de leche pancake', desc:'Folded pancake filled with dulce de leche, a slow-cooked milk caramel.', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:10, id:'francia', name:'Borgo Francia', country:'France', flag:'&#127467;&#127479;', color:'#b98741',
@@ -165,15 +165,15 @@
       stands:[
         { id:'creperie-nice', name:'Cr&ecirc;perie Nice', hours:FESTIVAL_HOURS_LABEL, loc:'Via Morelli',
           items:[
-            {name:'Cheese cr&ecirc;pe', desc:'Melted cheese and ham', price:6, tags:[], icon:'wrap'},
-            {name:'Nutella cr&ecirc;pe', desc:'Classic sweet cr&ecirc;pe', price:4, tags:['veg'], icon:'sweet'},
-            {name:'Mulled wine', desc:'Hot spiced wine', price:3, tags:['veg'], icon:'drink'}
+            {name:'Cheese cr&ecirc;pe', desc:'Thin cr&ecirc;pe folded around melted cheese and ham, savoury galette style.', price:6, tags:[], icon:'wrap'},
+            {name:'Nutella cr&ecirc;pe', desc:'Classic thin cr&ecirc;pe spread with hazelnut-chocolate cream, folded into quarters.', price:4, tags:['veg'], icon:'sweet'},
+            {name:'Mulled wine', desc:'Red wine gently heated with cinnamon, clove and citrus, served hot.', price:3, tags:['veg'], icon:'drink'}
           ]},
         { id:'huitres-bar', name:'Hu&icirc;tres Bar', hours:FESTIVAL_HOURS_LABEL, loc:'Via Morelli',
           items:[
-            {name:'Fresh oysters (6 pcs)', desc:'Served with lemon and shallot vinegar', price:9, tags:['gluten-free'], icon:'soup'},
-            {name:'French cheese board', desc:'Brie, comt&eacute; and camembert', price:7, tags:['veg'], icon:'grill'},
-            {name:'Glass of white wine', desc:'Chilled, dry white', price:4, tags:['veg','vegan'], icon:'drink'}
+            {name:'Fresh oysters (6 pcs)', desc:'Raw oysters on ice with lemon and a shallot-vinegar mignonette.', price:9, tags:['gluten-free'], icon:'soup'},
+            {name:'French cheese board', desc:'Brie, Comt&eacute; and camembert, soft to aged, served with bread.', price:7, tags:['veg'], icon:'grill'},
+            {name:'Glass of white wine', desc:'Chilled dry white wine, chosen to pair with seafood and cheese.', price:4, tags:['veg','vegan'], icon:'drink'}
           ]}
       ]},
     { num:11, id:'truckfood', name:'Borgo TruckFood', country:'Street food on wheels', flag:'&#128666;', color:'#e24552',
@@ -181,9 +181,9 @@
       stands:[
         { id:'truck-11', name:'Truck 11', hours:FESTIVAL_HOURS_LABEL, loc:'Corso Verdi / Via Oberdan',
           items:[
-            {name:'Grilled gourmet sandwich', desc:'With house sauces', price:7, tags:[], icon:'grill'},
-            {name:'Hand-cut fries', desc:'Hand cut', price:4, tags:['veg'], icon:'wrap'},
-            {name:'Milkshake', desc:'Mixed flavours', price:4, tags:['veg'], icon:'drink'}
+            {name:'Grilled gourmet sandwich', desc:'Toasted sandwich with quality fillings, finished with house-made sauces.', price:7, tags:[], icon:'grill'},
+            {name:'Hand-cut fries', desc:'Potatoes cut by hand and fried to order for an extra-crispy result.', price:4, tags:['veg'], icon:'wrap'},
+            {name:'Milkshake', desc:'Thick blended cold milkshake, available in a few classic flavours.', price:4, tags:['veg'], icon:'drink'}
           ]}
       ]},
     { num:12, id:'nordeuropa', name:'Borgo Nord Europa', country:'Scandinavia', flag:'&#127465;&#127472;', color:'#9ab70c',
@@ -191,9 +191,9 @@
       stands:[
         { id:'fjord-kitchen', name:'Fjord Kitchen', hours:FESTIVAL_HOURS_LABEL, loc:'Via Roma',
           items:[
-            {name:'Cured salmon', desc:'On rye bread with mustard and dill', price:8, tags:['gluten-free'], icon:'grill'},
-            {name:'Kanelbullar', desc:'Cinnamon roll', price:3, tags:['veg'], icon:'sweet'},
-            {name:'Gl&ouml;gg', desc:'Nordic hot spiced wine', price:4, tags:['veg'], icon:'drink'}
+            {name:'Cured salmon', desc:'Gravlax-style cured salmon, thin-sliced on rye bread with a mustard-dill sauce.', price:8, tags:['gluten-free'], icon:'grill'},
+            {name:'Kanelbullar', desc:'Soft spiralled Swedish cinnamon bun, buttery and topped with pearl sugar.', price:3, tags:['veg'], icon:'sweet'},
+            {name:'Gl&ouml;gg', desc:'Nordic mulled wine spiced with cardamom, clove and cinnamon, with raisins and almonds.', price:4, tags:['veg'], icon:'drink'}
           ]}
       ]},
     { num:13, id:'europacentrale', name:'Borgo Europa Centrale', country:'Central Europe', flag:'&#127462;&#127481;', color:'#b3b8a4',
@@ -201,9 +201,9 @@
       stands:[
         { id:'mitteleuropa-kitchen', name:'Mitteleuropa Kitchen', hours:FESTIVAL_HOURS_LABEL, loc:'Via Roma',
           items:[
-            {name:'Speck dumplings', desc:'In broth or plain', price:6, tags:[], icon:'soup'},
-            {name:'Goulash with bread', desc:'Spiced beef stew', price:8, tags:[], icon:'soup'},
-            {name:'Strudel', desc:'Apple, with cream', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Speck dumplings', desc:'Dense dumplings studded with smoked cured pork, served plain or in broth.', price:6, tags:[], icon:'soup'},
+            {name:'Goulash with bread', desc:'Thick paprika-spiced beef stew simmered with onions and peppers, served with bread.', price:8, tags:[], icon:'soup'},
+            {name:'Strudel', desc:'Rolled pastry filled with spiced apple, served in slices with cream.', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:14, id:'associazioni', name:'Borgo Associazioni', country:'Local community', flag:'&#129309;', color:'#90d2e4',
@@ -211,9 +211,9 @@
       stands:[
         { id:'associazione-solidale', name:'Associazione Solidale', hours:FESTIVAL_HOURS_LABEL, loc:'Via Crispi',
           items:[
-            {name:'Traditional Gorizia dish', desc:'Local recipe', price:7, tags:[], icon:'soup'},
-            {name:'Homemade dessert', desc:'Rotating recipe', price:3, tags:['veg'], icon:'sweet'},
-            {name:'House wine (glass)', desc:'Local selection', price:3, tags:['veg'], icon:'drink'}
+            {name:'Traditional Gorizia dish', desc:'A savoury local recipe prepared by volunteers, changing stand by stand.', price:7, tags:[], icon:'soup'},
+            {name:'Homemade dessert', desc:'A home-style sweet made by the association&rsquo;s members, rotating daily.', price:3, tags:['veg'], icon:'sweet'},
+            {name:'House wine (glass)', desc:'A glass of locally sourced wine, poured by the association running the stand.', price:3, tags:['veg'], icon:'drink'}
           ]}
       ]},
     { num:15, id:'fvg', name:'Borgo FVG', country:'Friuli Venezia Giulia', flag:'&#127470;&#127481;', color:'#c2804a',
@@ -221,9 +221,9 @@
       stands:[
         { id:'sapori-friuli', name:'Sapori del Friuli', hours:FESTIVAL_HOURS_LABEL, loc:'Piazza Municipio',
           items:[
-            {name:'Frico with polenta', desc:'Crispy cheese and potatoes', price:8, tags:['veg','gluten-free'], icon:'grill'},
-            {name:'San Daniele prosciutto board', desc:'Long-aged', price:9, tags:['gluten-free'], icon:'grill'},
-            {name:'Gubana', desc:'Traditional rolled pastry', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Frico with polenta', desc:'Crisp pan-fried cheese-and-potato disc served with a wedge of soft polenta.', price:8, tags:['veg','gluten-free'], icon:'grill'},
+            {name:'San Daniele prosciutto board', desc:'Thin slices of long-aged San Daniele DOP prosciutto, served simply.', price:9, tags:['gluten-free'], icon:'grill'},
+            {name:'Gubana', desc:'Rolled pastry from the Friuli hills filled with walnuts, raisins, pine nuts and grappa.', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:16, id:'slovenia-balcani', name:'Borgo Slovenia e Penisola Balcanica', country:'Slovenia &middot; Balkans', flag:'&#127480;&#127470;', color:'#db548b',
@@ -231,16 +231,16 @@
       stands:[
         { id:'gostilna-vas', name:'Gostilna Vas', hours:FESTIVAL_HOURS_LABEL, loc:'Via Crispi / Via De Gasperi',
           items:[
-            {name:'&Scaron;truklji', desc:'Filled pastry roll, savoury version', price:5, tags:['veg'], icon:'wrap'},
-            {name:'Jota', desc:'Bean, sauerkraut and potato soup', price:6, tags:['veg'], icon:'soup'},
-            {name:'Potica', desc:'Rolled walnut pastry', price:3, tags:['veg'], icon:'sweet'}
+            {name:'&Scaron;truklji', desc:'A rolled dumpling of thin dough around a savoury filling, sliced and served warm.', price:5, tags:['veg'], icon:'wrap'},
+            {name:'Jota', desc:'Hearty Slovenian-Friulian soup of beans, sauerkraut and potato, slow-simmered until thick.', price:6, tags:['veg'], icon:'soup'},
+            {name:'Potica', desc:'Rolled Slovenian pastry filled with sweet walnut paste, spiralled through the dough.', price:3, tags:['veg'], icon:'sweet'}
           ]},
         { id:'cevapi-sarajevo', name:'&#262;evapi Sarajevo', hours:FESTIVAL_HOURS_LABEL, loc:'Via Crispi / Via De Gasperi',
           items:[
-            {name:'&#262;evapi (5 pcs)', desc:'Grilled mixed-meat rolls, raw onion', price:7, tags:[], icon:'grill'},
-            {name:'Pljeskavica', desc:'Grilled mixed-meat patty, kajmak and ajvar', price:7, tags:[], icon:'grill'},
-            {name:'Meat burek', desc:'Filled pastry, freshly baked', price:4, tags:[], icon:'wrap'},
-            {name:'Baklava', desc:'Pastry, walnuts and honey', price:3, tags:['veg'], icon:'sweet'}
+            {name:'&#262;evapi (5 pcs)', desc:'Grilled rolls of seasoned minced mixed meat, served with raw chopped onion.', price:7, tags:[], icon:'grill'},
+            {name:'Pljeskavica', desc:'Larger grilled mixed-meat patty, served with kajmak and ajvar.', price:7, tags:[], icon:'grill'},
+            {name:'Meat burek', desc:'Coiled filo pastry filled with seasoned minced meat, baked crisp.', price:4, tags:[], icon:'wrap'},
+            {name:'Baklava', desc:'Layered filo pastry with walnuts, baked and soaked in honey syrup.', price:3, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:17, id:'borderless', name:'Borgo Borderless', country:'Fusion cuisine', flag:'&#127760;', color:'#07a7a3',
@@ -248,9 +248,9 @@
       stands:[
         { id:'fusion-lab', name:'Fusion Lab', hours:FESTIVAL_HOURS_LABEL, loc:'Piazza Transalpina',
           items:[
-            {name:'Kimchi taco', desc:'Mexican taco with Korean kimchi', price:6, tags:[], icon:'wrap'},
-            {name:'Ramen burger', desc:'Burger with noodle-cake buns instead of bread', price:8, tags:[], icon:'grill'},
-            {name:'Matcha tea gelato', desc:'Artisan gelato', price:4, tags:['veg','gluten-free'], icon:'sweet'}
+            {name:'Kimchi taco', desc:'Mexican taco shell filled with Korean fermented kimchi and a savoury protein filling.', price:6, tags:[], icon:'wrap'},
+            {name:'Ramen burger', desc:'Beef patty and toppings held between two pressed, pan-fried noodle buns.', price:8, tags:[], icon:'grill'},
+            {name:'Matcha tea gelato', desc:'Artisan gelato flavoured with matcha green tea, creamy with a grassy edge.', price:4, tags:['veg','gluten-free'], icon:'sweet'}
           ]}
       ]}
   ];
@@ -366,7 +366,16 @@
     'Meat burek': { src:'assets/dishes/meat-burek.jpg', credit:'&ldquo;Spicy Lamb Borek&rdquo; by avlxyz', license:'CC BY-SA 2.0', source:'https://www.flickr.com/photos/10559879@N00/4204721929' },
     'Baklava': { src:'assets/dishes/baklava.jpg', credit:'&ldquo;Lebanese Baklava&rdquo; by lisamurray', license:'CC BY-ND 2.0', source:'https://www.flickr.com/photos/22171342@N02/6429963321' },
     'Kimchi taco': { src:'assets/dishes/kimchi-taco.jpg', credit:'&ldquo;KimChi Tacos&rdquo; by Pabo76', license:'CC BY-NC-ND 2.0', source:'https://www.flickr.com/photos/12687042@N00/5489980284' },
-    'Matcha tea gelato': { src:'assets/dishes/matcha-tea-gelato.jpg', credit:'&ldquo;Uji Matcha Ice Cream&rdquo; by avlxyz', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/10559879@N00/54577436644' }
+    'Matcha tea gelato': { src:'assets/dishes/matcha-tea-gelato.jpg', credit:'&ldquo;Uji Matcha Ice Cream&rdquo; by avlxyz', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/10559879@N00/54577436644' },
+    'Canederli in brodo': { src:'assets/dishes/canederli-in-brodo.jpg', credit:'&ldquo;Knodel soup&rdquo; by u m a m i', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/95842339@N00/879357724' },
+    'Chicken yassa': { src:'assets/dishes/chicken-yassa.jpg', credit:'&ldquo;Thieboudienne or chebu jen and chicken yassa&rdquo; by Beth M527', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/11037560@N04/39651637793' },
+    'Edamame': { src:'assets/dishes/edamame.jpg', credit:'&ldquo;Edamame soybeans &ndash; Kokoro Sushi, Brighton&rdquo; by avlxyz', license:'CC BY-NC 2.0', source:'https://www.flickr.com/photos/10559879@N00/52362009163' },
+    'Mulled wine': { src:'assets/dishes/mulled-wine.jpg', credit:'&ldquo;Gl&uuml;hwein&rdquo; by Wheeler Cowperthwaite', license:'CC BY 2.0', source:'https://www.flickr.com/photos/60756254@N07/10320831406' },
+    'Frico with polenta': { src:'assets/dishes/frico-with-polenta.jpg', credit:'&ldquo;Frico con polenta&rdquo; by DiarioInViaggio', license:'CC BY-NC-SA 2.0', source:'https://www.flickr.com/photos/89875728@N07/8184940405' },
+    'Gubana': { src:'assets/dishes/gubana.jpg', credit:'&ldquo;Gubana 03&rdquo; by Petar43', license:'CC BY-SA 4.0', source:'https://commons.wikimedia.org/w/index.php?curid=39421823' },
+    '&Scaron;truklji': { src:'assets/dishes/struklji.jpg', credit:'&ldquo;Struklji&rdquo; by LTO, Slovenian Wikipedia', license:'CC BY-SA 3.0', source:'https://commons.wikimedia.org/w/index.php?curid=36719363' },
+    'Pljeskavica': { src:'assets/dishes/pljeskavica.jpg', credit:'&ldquo;Pljeskavica (Sarajevo)&rdquo; by BiHVolim', license:'CC BY-SA 4.0', source:'https://commons.wikimedia.org/w/index.php?curid=42850364' },
+    'Homemade dessert': { src:'assets/dishes/homemade-dessert.jpg', credit:'&ldquo;Coconut Layer Cake&rdquo; by kimberlykv', license:'CC BY 2.0', source:'https://www.flickr.com/photos/87542849@N00/3540955623' }
   };
 
   var PHOTOS = [
