@@ -466,30 +466,20 @@
   }
 
   function renderMap(){
-    var overlay = document.getElementById('map-pins-overlay');
-    overlay.innerHTML = '';
+    var grid = document.getElementById('map-pin-grid');
+    grid.innerHTML = '';
     BORGHI.forEach(function(b){
-      var pin = document.createElement('button');
-      pin.className = 'map-pin';
-      pin.style.left = b.mapx + '%';
-      pin.style.top = b.mapy + '%';
-      pin.style.background = b.color;
-      pin.setAttribute('data-open-borgo', b.id);
-      pin.setAttribute('aria-label', b.num + ' ' + b.name);
-      pin.textContent = b.num;
-      overlay.appendChild(pin);
+      var btn = document.createElement('button');
+      btn.className = 'map-pin-btn';
+      btn.setAttribute('data-open-borgo', b.id);
+      btn.innerHTML =
+        '<span class="num" style="background:'+b.color+'">'+b.num+'</span>'+
+        '<span class="name">'+b.name.replace('Borgo ','')+'</span>';
+      grid.appendChild(btn);
     });
 
     var legend = document.getElementById('map-legend');
     legend.innerHTML = '';
-    BORGHI.forEach(function(b){
-      var item = document.createElement('div');
-      item.className = 'legend-item';
-      item.setAttribute('data-open-borgo', b.id);
-      item.innerHTML = '<span class="swatch" style="background:'+b.color+'"></span>'+b.num+'. '+b.name;
-      legend.appendChild(item);
-    });
-    var sep = document.createElement('div'); sep.className='legend-sep'; legend.appendChild(sep);
     LANDMARKS.forEach(function(lm){
       var item = document.createElement('a');
       item.className = 'legend-item';

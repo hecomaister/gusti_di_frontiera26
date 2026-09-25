@@ -275,19 +275,25 @@ gusti di frontiera gorica, festival hrane gorica italija, street food gorica, sa
   .map-wrap{background:var(--paper-2);border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:16px;}
   .map-image-wrap{position:relative;width:100%;border-radius:12px;overflow:hidden;line-height:0;}
   .map-image{width:100%;display:block;}
-  #map-pins-overlay{position:absolute;inset:0;}
-  .map-pin{
-    position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;
-    border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.45);
-    display:flex;align-items:center;justify-content:center;
-    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;color:#fff;cursor:pointer;
-  }
-  .map-pin:active{transform:translate(-50%,-50%) scale(0.9);}
   .map-disclaimer{font-size:11px;color:var(--ink-soft);text-align:center;margin-top:9px;font-family:'IBM Plex Mono',monospace;}
+  .map-pin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:4px;}
+  .map-pin-btn{
+    display:flex;align-items:center;gap:9px;background:var(--paper);border:1px solid var(--line);
+    border-radius:12px;padding:9px 10px;cursor:pointer;font-family:inherit;text-align:left;
+    box-shadow:0 1px 2px rgba(24,36,48,0.05);
+  }
+  .map-pin-btn:active{transform:scale(0.97);}
+  .map-pin-btn .num{
+    width:28px;height:28px;border-radius:50%;color:#fff;flex:none;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .map-pin-btn .name{font-size:11.5px;font-weight:700;color:var(--ink);line-height:1.25;}
   .legend{display:flex;flex-wrap:wrap;gap:9px 16px;margin-top:16px;}
   .legend-item{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-soft);cursor:pointer;font-weight:600;}
   .legend-item .swatch{width:10px;height:10px;border-radius:50%;}
   .legend-sep{width:100%;height:1px;background:var(--line);margin:2px 0;}
+  @media (min-width:420px){ .map-pin-grid{grid-template-columns:repeat(4,1fr);} }
   .info-card{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:16px;}
   .info-card h3{font-size:14.5px;margin-bottom:8px;}
   .info-card p{font-size:13px;color:var(--ink-soft);margin:0 0 8px;}
@@ -448,15 +454,17 @@ gusti di frontiera gorica, festival hrane gorica italija, street food gorica, sa
       <div class="map-wrap">
         <div class="map-image-wrap" id="map-image-wrap">
           <img src="assets/festival-map.jpg" alt="Official Gusti di Frontiera 2026 map showing the 17 borghi, info points, restrooms, first aid, parking and emergency exit routes" class="map-image">
-          <div id="map-pins-overlay"></div>
         </div>
-        <div class="map-disclaimer">Official festival map. The numbered points are tappable and open the matching borgo &mdash; positions are approximate and hand-overlaid on the original image.</div>
+        <div class="map-disclaimer">Official festival map. Tap a numbered borgo below to open it.</div>
       </div>
+      <div class="section-label"><h2>Borghi</h2></div>
+      <div class="map-pin-grid" id="map-pin-grid"></div>
+      <div class="section-label"><h2>Landmarks</h2></div>
       <div class="legend" id="map-legend"></div>
 
       <div class="info-card">
         <h3>How to read the map</h3>
-        <p>The official map already shows info points, the first-aid point, restrooms (WC), emergency exit routes, parking areas (cars, disabled, campervans) and the free mobility service. Tap a coloured number to open the matching borgo.</p>
+        <p>The official map already shows info points, the first-aid point, restrooms (WC), emergency exit routes, parking areas (cars, disabled, campervans) and the free mobility service. Tap a numbered borgo above to open it.</p>
         <p>For up-to-date times for the special trains and shuttle buses:</p>
         <a href="https://www.aptgorizia.it/apt-e-il-territorio/bus-navetta-e-trenino-transfrontaliero-per-gusti-di-frontiera-2026/" target="_blank" rel="noopener">APT Gorizia &ndash; shuttles &amp; trains &#8594;</a>
       </div>
