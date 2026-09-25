@@ -242,15 +242,18 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .result-sub .swatch{width:8px;height:8px;border-radius:50%;}
 
   /* ---------- Photos view ---------- */
-  .gmaps-card{
-    display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));
-    color:#fff;border-radius:16px;padding:16px;margin-top:4px;text-decoration:none;
+  .social-card{
+    display:flex;align-items:center;gap:13px;
+    color:#fff;border-radius:16px;padding:16px;margin-top:10px;text-decoration:none;
   }
-  .gmaps-card .gmaps-ic{font-size:26px;flex:none;}
-  .gmaps-card .gmaps-body{flex:1;min-width:0;}
-  .gmaps-card .gmaps-title{font-weight:700;font-size:14.5px;}
-  .gmaps-card .gmaps-sub{font-size:12px;color:rgba(255,255,255,0.82);margin-top:3px;}
-  .gmaps-card .gmaps-arrow{font-size:18px;flex:none;opacity:0.85;}
+  .social-card:first-child{margin-top:4px;}
+  .social-card .gmaps-ic{font-size:26px;flex:none;}
+  .social-card .gmaps-body{flex:1;min-width:0;}
+  .social-card .gmaps-title{font-weight:700;font-size:14.5px;}
+  .social-card .gmaps-sub{font-size:12px;color:rgba(255,255,255,0.82);margin-top:3px;}
+  .social-card .gmaps-arrow{font-size:18px;flex:none;opacity:0.85;}
+  .gmaps-card{background:linear-gradient(135deg,var(--blue),var(--blue-dark));}
+  .instagram-card{background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);}
   .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
   .photo-tile{
     position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);
@@ -492,7 +495,7 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
     <!-- PHOTOS -->
     <section class="view" id="view-photos">
       <div class="section-label" style="margin-top:0;"><h2>Photos</h2></div>
-      <a class="gmaps-card" href="https://www.google.com/maps/search/?api=1&query=Gusti+di+Frontiera+Gorizia" target="_blank" rel="noopener">
+      <a class="social-card gmaps-card" href="https://www.google.com/maps/search/?api=1&query=Gusti+di+Frontiera+Gorizia" target="_blank" rel="noopener">
         <span class="gmaps-ic">&#128247;</span>
         <span class="gmaps-body">
           <span class="gmaps-title">See real photos on Google Maps</span>
@@ -500,7 +503,15 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
         </span>
         <span class="gmaps-arrow">&#8594;</span>
       </a>
-      <p class="muted" style="font-size:12.5px;margin-top:10px;">Photos on Google Maps are uploaded by individual visitors and Google account holders &mdash; we don't copy or rehost them here without permission. The grid below only shows images we have the rights to use.</p>
+      <a class="social-card instagram-card" href="https://www.instagram.com/popular/gusti-di-frontiera-2026/" target="_blank" rel="noopener">
+        <span class="gmaps-ic">&#128248;</span>
+        <span class="gmaps-body">
+          <span class="gmaps-title">See results on Instagram</span>
+          <span class="gmaps-sub">Recent posts tagged Gusti di Frontiera 2026</span>
+        </span>
+        <span class="gmaps-arrow">&#8594;</span>
+      </a>
+      <p class="muted" style="font-size:12.5px;margin-top:10px;">Photos on Google Maps and Instagram are uploaded by individual visitors and account holders &mdash; we don't copy or rehost them here without permission. The grid below only shows images we have the rights to use.</p>
       <div class="photo-grid" id="photo-grid"></div>
     </section>
 
