@@ -42,7 +42,24 @@ Dato che nessuna fonte automatica è disponibile in tempo utile per l'evento (24
 3. **Nessuno scraping automatico dei social**: dato il blocco di Meta sulle Graph API per pagine di cui non siamo admin, e che lo scraping non autenticato di Instagram/Facebook viola i loro Termini di Servizio, non lo facciamo. L'unica via è consultare manualmente i post pubblici (browser normale) e, se si vuole ripubblicare una foto di un visitatore, chiedere il permesso all'autore prima (come da §1.5 di `piano-gusti-digitali.md`).
 4. **Contatto diretto con l'organizzazione** resta la via più veloce per un dataset iniziale completo: scrivere a `gusti.frontiera@comune.gorizia.it` o `gustidifrontiera2026@gmail.com` chiedendo se esiste un export espositori da condividere.
 
-## 4. Prossimi passi concreti
+## 4bis. Aggiornamento del 25 settembre 2026 — dati pubblici trovati e applicati
+
+Nuova ricerca mirata su stampa locale (Il Piccolo, Friuli Oggi, Nordest24, girofvg.com) ha confermato **categorie di piatti reali per borgo** (non prezzi — nessuno pubblicato da nessuna fonte), che sono stati usati per rendere più accurati i menu di esempio in `js/app.js`:
+
+- **Borgo Mare**: confermato che è l'unico borgo riservato esclusivamente a piatti di pesce — descrizione aggiornata di conseguenza.
+- **Borgo Austria**: aggiunta di pretzel e canederli (dumplings), oltre a salsicce e strudel già presenti.
+- **Borgo Africa**: la stampa lo descrive come Maghreb **e** Africa sub-sahariana — aggiunto uno stand "Marrakech Tajine" (tajine, couscous, tè alla menta) accanto a quelli già presenti di cucina dell'Africa occidentale.
+- **Borgo Oriente**: la stampa cita esplicitamente sushi, ramen, curry — aggiunto uno stand sushi/curry e trasformato "noodles" in ramen.
+- **Borgo Latino Americano**: la stampa cita esplicitamente empanadas **e churrasco** — aggiunto uno stand di grigliata argentina.
+- **Borgo Francia**: la stampa cita esplicitamente crêpes, formaggi **e ostriche** — aggiunto uno stand di ostriche.
+- **Borgo Slovenia e Penisola Balcanica**: la stampa cita esplicitamente "ćevapčići alla pljeskavica" — aggiunta la pljeskavica come piatto separato dai ćevapi.
+- **Borgo Americhe**: la stampa cita esplicitamente "tex-mex" — sostituito il bagel (non menzionato da nessuna fonte) con nachos tex-mex.
+
+**Importante**: i **prezzi restano stime plausibili non verificate**, perché nessuna fonte pubblica (sito ufficiale, Comune, stampa, social) pubblica un prezzo specifico per un piatto specifico di quest'edizione. Il banner "examples until confirmed by each vendor" nell'app resta quindi corretto e necessario.
+
+Un articolo de *Il Piccolo* (["ecco la mappa della kermesse 2026"](https://www.ilpiccolo.it/cronaca/gusti-frontiera-gorizia-ecco-mappa-2026-tx1s1g4o)) e *Nordest24* riportano alcune vie leggermente diverse da quelle tracciate a mano sull'immagine ufficiale in `borghi-mappa.json` (es. Borgo Austria in Piazza Cesare Battisti secondo la stampa, Via Cadorna secondo il tracciamento pixel del PDF ufficiale; Borgo Francia in Corso Verdi secondo la stampa, Via Morelli secondo il tracciamento). **Non ho spostato i pin sulla mappa** per questa discrepanza: il tracciamento pixel resta la fonte più affidabile per la posizione esatta finché non viene confermata sul posto, ma vale la pena una verifica de visu quando qualcuno sarà fisicamente al festival.
+
+## 5. Prossimi passi concreti
 
 - [ ] Aprire `gustidifrontiera.regione.fvg.it` in un browser reale con devtools aperti (tab Network → XHR/Fetch) per verificare se la mappa carica un JSON/GeoJSON pubblico con le coordinate dei borghi — se sì, è l'unico dato "agganciabile" tecnicamente oggi.
 - [ ] Inviare una email a `gusti.frontiera@comune.gorizia.it` chiedendo un export dell'elenco espositori (anche solo nome stand + borgo + tipologia offerta, senza prezzi).

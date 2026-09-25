@@ -34,27 +34,28 @@
           ]}
       ]},
     { num:3, id:'austria', name:'Borgo Austria', country:'Austria', flag:'&#127462;&#127481;', color:'#a19fc5',
-      desc:'Sausages, goulash and Viennese pastries.', loc:'Via Cadorna', mapx:57.4, mapy:36.5,
+      desc:'Grilled sausages, pretzels, canederli and Viennese pastries.', loc:'Via Cadorna', mapx:57.4, mapy:36.5,
       stands:[
         { id:'wien-imbiss', name:'Wien Imbiss', hours:'11:00 &ndash; 00:00', loc:'Via Cadorna', open:true,
           items:[
             {name:'Mixed sausages', desc:'With mustard and sauerkraut', price:6, tags:[], icon:'grill'},
-            {name:'Goulash', desc:'Spiced beef stew with bread', price:8, tags:[], icon:'soup'},
-            {name:'Sachertorte', desc:'Slice of chocolate cake', price:4, tags:['veg'], icon:'sweet'}
+            {name:'Bavarian pretzel', desc:'Soft-baked, coarse salt', price:4, tags:['veg'], icon:'bread'},
+            {name:'Canederli in brodo', desc:'Bread dumplings in broth', price:6, tags:['veg'], icon:'soup'},
+            {name:'Apfelstrudel', desc:'Apple strudel with vanilla cream', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:4, id:'americhe', name:'Borgo Americhe', country:'USA &middot; Canada', flag:'&#127482;&#127480;', color:'#da090a',
-      desc:'Burgers, bagels and North American favourites.', loc:'Via Cadorna (near Giardini Pubblici)', mapx:57.3, mapy:45.4,
+      desc:'Burgers, Tex-Mex and grilled North American favourites.', loc:'Via Cadorna (near Giardini Pubblici)', mapx:57.3, mapy:45.4,
       stands:[
         { id:'route66', name:'Route 66 Diner', hours:'11:00 &ndash; 01:00', loc:'Via Cadorna', open:true,
           items:[
             {name:'Classic cheeseburger', desc:'With fries', price:8, tags:[], icon:'grill'},
-            {name:'Salmon bagel', desc:'With cream cheese', price:6, tags:[], icon:'wrap'},
+            {name:'Loaded nachos', desc:'Tex-Mex style, cheese and jalapeños', price:6, tags:['veg'], icon:'wrap'},
             {name:'Cheesecake', desc:'Slice with berry coulis', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:5, id:'mare', name:'Borgo Mare', country:'Seafood', flag:'&#127859;', color:'#0aa051',
-      desc:'The best of fish and seafood flavours.', loc:'Via Boccaccio', mapx:66.5, mapy:38.5,
+      desc:'Exclusively fish and seafood dishes — the only borgo reserved for it.', loc:'Via Boccaccio', mapx:66.5, mapy:38.5,
       stands:[
         { id:'mare-nostrum', name:'Mare Nostrum', hours:'11:00 &ndash; 00:00', loc:'Via Boccaccio', open:true,
           items:[
@@ -79,9 +80,15 @@
             {name:'Tim Tam shake', desc:'Chocolate-biscuit milkshake', price:4, tags:['veg'], icon:'drink'}
           ]}
       ]},
-    { num:7, id:'africa', name:'Borgo Africa', country:'West Africa', flag:'&#127463;&#127465;', color:'#74b3e1',
-      desc:'Spices, grilled meats and spiced rice from the African continent.', loc:'Via Brass (corner of Via Santa Chiara)', mapx:67.9, mapy:26.3,
+    { num:7, id:'africa', name:'Borgo Africa', country:'Maghreb &middot; West Africa', flag:'&#127463;&#127465;', color:'#74b3e1',
+      desc:'Couscous, tajine and spiced grills from the Maghreb and sub-Saharan Africa.', loc:'Via Brass (corner of Via Santa Chiara)', mapx:67.9, mapy:26.3,
       stands:[
+        { id:'marrakech-tajine', name:'Marrakech Tajine', hours:'11:00 &ndash; 00:00', loc:'Via Brass', open:true,
+          items:[
+            {name:'Lamb tajine', desc:'Slow-cooked with dried apricots and almonds', price:9, tags:['gluten-free'], icon:'soup'},
+            {name:'Vegetable couscous', desc:'Couscous with seasonal vegetables', price:6, tags:['vegan'], icon:'rice'},
+            {name:'Mint tea', desc:'Served hot and sweetened', price:2, tags:['vegan'], icon:'drink'}
+          ]},
         { id:'sahel-kitchen', name:'Sahel Kitchen', hours:'11:00 &ndash; 00:00', loc:'Via Brass', open:true,
           items:[
             {name:'Chicken yassa', desc:'Senegalese-style, marinated in lemon and onion', price:7, tags:['gluten-free'], icon:'grill'},
@@ -96,7 +103,7 @@
           ]}
       ]},
     { num:8, id:'oriente', name:'Borgo Oriente', country:'Middle East &middot; Asia', flag:'&#127826;', color:'#ee9610',
-      desc:'Falafel, hummus, noodles and spiced sweets.', loc:'Via Santa Chiara / Via Boccaccio', mapx:71.4, mapy:37.4,
+      desc:'Sushi, ramen, curry, steamed dumplings and Middle Eastern specialities.', loc:'Via Santa Chiara / Via Boccaccio', mapx:71.4, mapy:37.4,
       stands:[
         { id:'shawarma-house', name:'Shawarma House', hours:'11:00 &ndash; 02:00', loc:'Via Santa Chiara', open:true,
           items:[
@@ -106,29 +113,47 @@
           ]},
         { id:'noodle-corner', name:'Noodle Corner', hours:'12:00 &ndash; 01:00', loc:'Via Santa Chiara', open:false,
           items:[
-            {name:'Chicken noodles', desc:'Stir-fried with vegetables', price:7, tags:[], icon:'wrap'},
+            {name:'Chicken ramen', desc:'Noodle soup, soft egg, spring onion', price:8, tags:[], icon:'soup'},
             {name:'Gyoza (6 pcs)', desc:'Filled steamed dumplings', price:5, tags:[], icon:'wrap'},
             {name:'Jasmine tea', desc:'Served hot', price:2, tags:['vegan'], icon:'drink'}
+          ]},
+        { id:'sakura-sushi', name:'Sakura Sushi & Curry', hours:'11:00 &ndash; 01:00', loc:'Via Boccaccio', open:true,
+          items:[
+            {name:'Mixed sushi platter (8 pcs)', desc:'Nigiri and maki selection', price:9, tags:['gluten-free'], icon:'rice'},
+            {name:'Chicken katsu curry', desc:'Breaded chicken, rice, curry sauce', price:8, tags:[], icon:'wrap'},
+            {name:'Edamame', desc:'Steamed and salted soybeans', price:3, tags:['vegan','gluten-free'], icon:'soup'}
           ]}
       ]},
     { num:9, id:'latinoamericano', name:'Borgo Latino Americano', country:'Mexico &middot; Argentina', flag:'&#127765;', color:'#99639c',
-      desc:'From Mexico to Patagonia: tacos, empanadas and asado.', loc:'Via Cadorna', mapx:61.3, mapy:31.5,
+      desc:'From Mexico to Patagonia: tacos, empanadas and churrasco.', loc:'Via Cadorna', mapx:61.3, mapy:31.5,
       stands:[
         { id:'taqueria-frontera', name:'Taquer&iacute;a Frontera', hours:'11:00 &ndash; 01:00', loc:'Via Cadorna', open:true,
           items:[
             {name:'Al pastor tacos (3 pcs)', desc:'Marinated pork, pineapple, coriander', price:6, tags:[], icon:'wrap'},
             {name:'Empanadas (2 pcs)', desc:'Filled with hand-cut meat', price:5, tags:[], icon:'wrap'},
             {name:'Churros', desc:'With hot chocolate', price:3, tags:['veg'], icon:'sweet'}
+          ]},
+        { id:'gaucho-grill', name:'Gaucho Grill', hours:'11:00 &ndash; 01:00', loc:'Via Cadorna', open:true,
+          items:[
+            {name:'Churrasco skewer', desc:'Argentine-style grilled beef', price:8, tags:['gluten-free'], icon:'skewer'},
+            {name:'Chimichurri bread', desc:'Toasted bread with chimichurri sauce', price:3, tags:['vegan'], icon:'bread'},
+            {name:'Dulce de leche pancake', desc:'Folded pancake with caramel filling', price:4, tags:['veg'], icon:'sweet'}
           ]}
       ]},
     { num:10, id:'francia', name:'Borgo Francia', country:'France', flag:'&#127467;&#127479;', color:'#b98741',
-      desc:'Cr&ecirc;pes, cheeses and French sweets.', loc:'Via Morelli', mapx:69.2, mapy:50.2,
+      desc:'Cr&ecirc;pes, cheeses, oysters and French sweets.', loc:'Via Morelli', mapx:69.2, mapy:50.2,
       stands:[
         { id:'creperie-nice', name:'Cr&ecirc;perie Nice', hours:'11:00 &ndash; 01:00', loc:'Via Morelli', open:true,
           items:[
             {name:'Cheese cr&ecirc;pe', desc:'Melted cheese and ham', price:6, tags:[], icon:'wrap'},
             {name:'Nutella cr&ecirc;pe', desc:'Classic sweet cr&ecirc;pe', price:4, tags:['veg'], icon:'sweet'},
             {name:'Mulled wine', desc:'Hot spiced wine', price:3, tags:['veg'], icon:'drink'}
+          ]},
+        { id:'huitres-bar', name:'Hu&icirc;tres Bar', hours:'11:00 &ndash; 00:00', loc:'Via Morelli', open:true,
+          items:[
+            {name:'Fresh oysters (6 pcs)', desc:'Served with lemon and shallot vinegar', price:9, tags:['gluten-free'], icon:'soup'},
+            {name:'French cheese board', desc:'Brie, comt&eacute; and camembert', price:7, tags:['veg'], icon:'grill'},
+            {name:'Glass of white wine', desc:'Chilled, dry white', price:4, tags:['veg','vegan'], icon:'drink'}
           ]}
       ]},
     { num:11, id:'truckfood', name:'Borgo TruckFood', country:'Street food on wheels', flag:'&#128666;', color:'#e24552',
@@ -193,6 +218,7 @@
         { id:'cevapi-sarajevo', name:'&#262;evapi Sarajevo', hours:'11:00 &ndash; 02:00', loc:'Via Crispi / Via De Gasperi', open:true,
           items:[
             {name:'&#262;evapi (5 pcs)', desc:'Grilled mixed-meat rolls, raw onion', price:7, tags:[], icon:'grill'},
+            {name:'Pljeskavica', desc:'Grilled mixed-meat patty, kajmak and ajvar', price:7, tags:[], icon:'grill'},
             {name:'Meat burek', desc:'Filled pastry, freshly baked', price:4, tags:[], icon:'wrap'},
             {name:'Baklava', desc:'Pastry, walnuts and honey', price:3, tags:['veg'], icon:'sweet'}
           ]}
