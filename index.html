@@ -232,6 +232,41 @@ gusti di frontiera gorica, festival hrane gorica italija, street food gorica, sa
   .result-sub{font-size:11.5px;color:var(--ink-soft);margin-top:3px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
   .result-sub .swatch{width:8px;height:8px;border-radius:50%;}
 
+  /* ---------- Photos view ---------- */
+  .gmaps-card{
+    display:flex;align-items:center;gap:13px;background:linear-gradient(135deg,var(--navy),var(--navy-dark));
+    color:#fff;border-radius:16px;padding:16px;margin-top:4px;text-decoration:none;
+  }
+  .gmaps-card .gmaps-ic{font-size:26px;flex:none;}
+  .gmaps-card .gmaps-body{flex:1;min-width:0;}
+  .gmaps-card .gmaps-title{font-weight:700;font-size:14.5px;}
+  .gmaps-card .gmaps-sub{font-size:12px;color:rgba(255,255,255,0.82);margin-top:3px;}
+  .gmaps-card .gmaps-arrow{font-size:18px;flex:none;opacity:0.85;}
+  .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
+  .photo-tile{
+    position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--line);
+    aspect-ratio:1/1;background:var(--paper-2);cursor:pointer;padding:0;
+  }
+  .photo-tile img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-tile .photo-credit{
+    position:absolute;bottom:0;left:0;right:0;padding:6px 8px;font-size:9.5px;
+    background:linear-gradient(transparent,rgba(24,36,48,0.75));color:#fff;font-family:'IBM Plex Mono',monospace;
+  }
+  .photo-tile.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);border-style:dashed;}
+  .photo-tile.placeholder .glyph{font-size:26px;}
+  .photo-tile.placeholder span.lbl{font-size:11px;font-weight:600;text-align:center;padding:0 10px;}
+  .photo-lightbox{
+    position:fixed;inset:0;background:rgba(10,15,20,0.92);z-index:70;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;
+  }
+  .photo-lightbox[hidden]{display:none;}
+  .photo-lightbox img{max-width:100%;max-height:75vh;border-radius:10px;}
+  .photo-lightbox .lb-credit{color:#fff;font-size:12.5px;margin-top:12px;font-family:'IBM Plex Mono',monospace;text-align:center;}
+  .photo-lightbox .lb-close{
+    position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;background:rgba(255,255,255,0.14);
+    border:2px solid rgba(255,255,255,0.4);color:#fff;width:42px;height:42px;border-radius:12px;font-size:18px;cursor:pointer;
+  }
+
   .empty-state{text-align:center;padding:55px 20px;color:var(--ink-soft);}
   .empty-state .glyph{font-size:36px;margin-bottom:12px;}
   .empty-state p{font-size:14px;max-width:32ch;margin:0 auto;}
@@ -275,18 +310,18 @@ gusti di frontiera gorica, festival hrane gorica italija, street food gorica, sa
   .tabbar-inner{
     pointer-events:auto;
     width:100%;max-width:600px;
-    display:grid;grid-template-columns:repeat(4,1fr);
+    display:grid;grid-template-columns:repeat(5,1fr);
     background:#fff;
     border-top:1px solid var(--line);
     box-shadow:0 -2px 10px rgba(24,36,48,0.06);
   }
   .tab-btn{
     background:none;border:none;color:var(--ink-soft);font-family:inherit;
-    padding:11px 4px 9px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
+    padding:11px 2px 9px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;
     min-height:56px;
   }
-  .tab-btn .ic{font-size:20px;}
-  .tab-btn .lb{font-size:11px;font-weight:700;letter-spacing:0.01em;}
+  .tab-btn .ic{font-size:19px;}
+  .tab-btn .lb{font-size:10px;font-weight:700;letter-spacing:0.01em;}
   .tab-btn.active{color:var(--navy);}
   .tab-btn.active .ic{filter:none;}
 
@@ -437,15 +472,37 @@ gusti di frontiera gorica, festival hrane gorica italija, street food gorica, sa
       <div id="saved-content"></div>
     </section>
 
+    <!-- PHOTOS -->
+    <section class="view" id="view-photos">
+      <div class="section-label" style="margin-top:0;"><h2>Photos</h2></div>
+      <a class="gmaps-card" href="https://www.google.com/maps/search/?api=1&query=Gusti+di+Frontiera+Gorizia" target="_blank" rel="noopener">
+        <span class="gmaps-ic">&#128247;</span>
+        <span class="gmaps-body">
+          <span class="gmaps-title">See real photos on Google Maps</span>
+          <span class="gmaps-sub">Visitor-uploaded photos of past editions, on the official listing</span>
+        </span>
+        <span class="gmaps-arrow">&#8594;</span>
+      </a>
+      <p class="muted" style="font-size:12.5px;margin-top:10px;">Photos on Google Maps are uploaded by individual visitors and Google account holders &mdash; we don't copy or rehost them here without permission. The grid below only shows images we have the rights to use.</p>
+      <div class="photo-grid" id="photo-grid"></div>
+    </section>
+
   </main>
 
   <div class="tabbar">
     <div class="tabbar-inner">
       <button class="tab-btn active" data-tab="home"><span class="ic">&#127968;</span><span class="lb">Home</span></button>
       <button class="tab-btn" data-tab="map"><span class="ic">&#128506;&#65039;</span><span class="lb">Map</span></button>
+      <button class="tab-btn" data-tab="photos"><span class="ic">&#128247;</span><span class="lb">Photos</span></button>
       <button class="tab-btn" data-tab="search"><span class="ic">&#128269;</span><span class="lb">Search</span></button>
       <button class="tab-btn" data-tab="saved"><span class="ic">&#9733;</span><span class="lb">Saved</span></button>
     </div>
+  </div>
+
+  <div class="photo-lightbox" id="photo-lightbox" hidden>
+    <button class="lb-close" id="lightbox-close" aria-label="Close">&#10005;</button>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lb-credit" id="lightbox-credit"></div>
   </div>
 
   <div class="modal-overlay" id="video-modal" hidden>

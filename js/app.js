@@ -270,7 +270,14 @@
     return '&euro;' + Math.min.apply(null,p) + '&ndash;' + Math.max.apply(null,p);
   }
 
-  var views = ['home','borgo','stand','search','map','saved'];
+  // Only images we actually have the rights to use. Real visitor photos on Google Maps
+  // are uploaded by individual contributors and are not ours to copy/rehost here —
+  // the Photos tab links out to the official Google Maps listing for those instead.
+  var PHOTOS = [
+    { src:'assets/festival-map.jpg', alt:'Official Gusti di Frontiera festival map', credit:'Official festival map &middot; Comune di Gorizia' }
+  ];
+
+  var views = ['home','borgo','stand','search','map','saved','photos'];
   function showView(name){
     state.view = name;
     views.forEach(function(v){ document.getElementById('view-'+v).classList.toggle('active', v===name); });
@@ -518,6 +525,23 @@
     wrap.appendChild(list);
   }
 
+  function renderPhotos(){
+    var grid = document.getElementById('photo-grid');
+    grid.innerHTML = '';
+    PHOTOS.forEach(function(p, i){
+      var tile = document.createElement('button');
+      tile.className = 'photo-tile';
+      tile.setAttribute('data-photo-index', i);
+      tile.innerHTML = '<img src="'+p.src+'" alt="'+p.alt+'" loading="lazy">'+
+        '<span class="photo-credit">'+p.credit+'</span>';
+      grid.appendChild(tile);
+    });
+    var addTile = document.createElement('div');
+    addTile.className = 'photo-tile placeholder';
+    addTile.innerHTML = '<span class="glyph">&#128248;</span><span class="lbl">Your photos here soon</span>';
+    grid.appendChild(addTile);
+  }
+
   document.addEventListener('click', function(e){
     var openBorgo = e.target.closest('[data-open-borgo]');
     var openStand = e.target.closest('[data-open-stand]');
@@ -530,6 +554,7 @@
     var borgoChip = e.target.closest('[data-borgo-filter]');
     var videoTile = e.target.closest('[data-video]');
     var favBtn = e.target.closest('#fav-toggle');
+    var photoTile = e.target.closest('[data-photo-index]');
 
     if(e.target.closest('a[href]')) return; // let real links behave normally
 
@@ -548,7 +573,23 @@
       if(t==='search'){ renderFilters(); runSearch(); }
       if(t==='map') renderMap();
       if(t==='saved') renderSaved();
+      if(t==='photos') renderPhotos();
       showView(t);
+      return;
+    }
+    if(photoTile){
+      var pIdx = Number(photoTile.getAttribute('data-photo-index'));
+      var photo = PHOTOS[pIdx];
+      if(photo){
+        document.getElementById('lightbox-img').src = photo.src;
+        document.getElementById('lightbox-img').alt = photo.alt;
+        document.getElementById('lightbox-credit').innerHTML = photo.credit;
+        document.getElementById('photo-lightbox').hidden = false;
+      }
+      return;
+    }
+    if(e.target.closest('#lightbox-close') || e.target.id === 'photo-lightbox'){
+      document.getElementById('photo-lightbox').hidden = true;
       return;
     }
     if(priceChip){
