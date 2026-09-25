@@ -497,7 +497,7 @@
       item.className = 'legend-item';
       item.href = gmaps(lm.query);
       item.target = '_blank'; item.rel = 'noopener';
-      item.style.textDecoration = 'none'; item.style.color = 'var(--navy)';
+      item.style.textDecoration = 'none'; item.style.color = 'var(--blue)';
       item.innerHTML = '<span class="swatch" style="background:#5c6b78"></span>&#128506;&#65039; '+lm.name;
       legend.appendChild(item);
     });
