@@ -273,8 +273,20 @@
   // Only images we actually have the rights to use. Real visitor photos on Google Maps
   // are uploaded by individual contributors and are not ours to copy/rehost here —
   // the Photos tab links out to the official Google Maps listing for those instead.
+  // The photos below were supplied directly for this app, taken on site at the festival.
   var PHOTOS = [
-    { src:'assets/festival-map.jpg', alt:'Official Gusti di Frontiera festival map', credit:'Official festival map &middot; Comune di Gorizia' }
+    { src:'assets/festival-map.jpg', alt:'Official Gusti di Frontiera festival map', credit:'Official festival map &middot; Comune di Gorizia' },
+    { src:'assets/photos/opening-ceremony-crowd.jpg', alt:'Crowd gathered for the opening ceremony in front of a Gorizia church', credit:'Opening ceremony &middot; on site' },
+    { src:'assets/photos/fvg-stand-piazza-vittoria.jpg', alt:'The "Io Sono Friuli Venezia Giulia" stand in Piazza della Vittoria', credit:'Borgo FVG &middot; Piazza della Vittoria' },
+    { src:'assets/photos/balkan-brass-band.jpg', alt:'Balkan brass band playing next to a stand selling popcorn, &scaron;trudel and burek', credit:'Live brass band &middot; Borgo Slovenia e Penisola Balcanica' },
+    { src:'assets/photos/balkan-grill-menu-banner.jpg', alt:'Grill stand banner showing &#263;evap&#269;i&#263;i, spicy sausage, mixed meat and pljeskavica with tortiglia', credit:'Grill menu board &middot; Borgo Slovenia e Penisola Balcanica' },
+    { src:'assets/photos/francia-raclette-potatoes.jpg', alt:'Potatoes cooking on a large pan at a raclette stand', credit:'Raclette potatoes &middot; Borgo Francia' },
+    { src:'assets/photos/bakery-oven-buns.jpg', alt:'Trays of freshly baked buns coming out of a portable oven', credit:'Fresh-baked buns &middot; on site' },
+    { src:'assets/photos/chimney-cake-spit.jpg', alt:'Dough wrapped around spits, roasting over coals for chimney cake', credit:'Chimney cake on the grill &middot; on site' },
+    { src:'assets/photos/stroopwafel-stand.jpg', alt:'Stand staff preparing waffles on a large flat griddle', credit:'Waffle stand &middot; on site' },
+    { src:'assets/photos/sausage-toppings-bar.jpg', alt:'Grilled sausages and a toppings bar with tomato, cucumber and cabbage', credit:'Sausage stand &middot; on site' },
+    { src:'assets/photos/skewer-grill.jpg', alt:'Rows of skewers cooking on a long charcoal grill', credit:'Skewer grill &middot; on site' },
+    { src:'assets/photos/london-bus-bar.jpg', alt:'A red London double-decker bus set up as a drinks bar in a piazza', credit:'London bus bar &middot; on site' }
   ];
 
   var views = ['home','borgo','stand','search','map','saved','photos'];
