@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+<script>
+(function(){
+  try{
+    var h = Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',hour:'2-digit',hour12:false}).format(new Date()));
+    var isNight = h>=20 || h<7;
+    document.documentElement.setAttribute('data-theme', isNight ? 'dark' : 'light');
+  }catch(e){
+    document.documentElement.setAttribute('data-theme','light');
+  }
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gusti Digitali — Guida a Gusti di Frontiera 2026, Gorizia</title>
@@ -34,6 +45,7 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap">
 <style>
   :root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  :root[data-theme="dark"]{color-scheme:dark}
   html{scroll-padding-top:env(safe-area-inset-top,0px)}
   body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}
   img{max-width:100%}
@@ -48,14 +60,38 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
     --line:#d9cc9e;
     --blue:#0a5fa0;
     --blue-dark:#0a3760;
+    --heading:#0a3760;
     --crimson:#bd2027;
     --crimson-bg:#fbe4e2;
+    --crimson-text:#7a1013;
     --green:#127a41;
     --green-bg:#dcf3e4;
     --pink:#a1265c;
     --pink-bg:#f7e2ec;
+    --pink-text:#7a1550;
     --yellow:#e8b400;
     --ink-black:#0a0a0a;
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef1f4;
+    --ink-soft:#b7c2cc;
+    --paper:#141a20;
+    --paper-2:#0c1014;
+    --paper-3:#232a24;
+    --line:#3a4148;
+    --blue:#4fa3e0;
+    --blue-dark:#0a3760;
+    --heading:#7fc4ef;
+    --crimson:#f0837e;
+    --crimson-bg:#3a1d1c;
+    --crimson-text:#f6b3af;
+    --green:#5fd493;
+    --green-bg:#123322;
+    --pink:#e690b8;
+    --pink-bg:#3a1f2c;
+    --pink-text:#f0b8d4;
+    --yellow:#f0c94a;
+    --ink-black:#f5f5f5;
   }
   *{box-sizing:border-box;}
   body{
@@ -97,13 +133,27 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   }
   .icon-btn:active{transform:scale(0.95);}
 
+  /* ---------- Google Translate ---------- */
+  .translate-widget{flex:none;}
+  .translate-widget .goog-te-gadget{font-family:inherit!important;font-size:0!important;color:transparent!important;}
+  .translate-widget .goog-te-gadget-simple{
+    background:rgba(255,255,255,0.16)!important;border:2px solid rgba(255,255,255,0.45)!important;
+    border-radius:4px!important;padding:8px 9px!important;display:inline-flex!important;align-items:center;
+  }
+  .translate-widget .goog-te-gadget-simple .goog-te-menu-value{font-size:14px!important;color:#fff!important;}
+  .translate-widget .goog-te-gadget-simple .goog-te-menu-value span{color:#fff!important;border:none!important;}
+  .translate-widget img{display:none!important;}
+  iframe.goog-te-banner-frame{display:none!important;}
+  body>div[class="skiptranslate"]{display:none!important;}
+  body{top:0!important;}
+
   .notice-banner{
     display:flex;align-items:flex-start;gap:8px;
-    background:var(--crimson-bg);border:1px solid var(--crimson);color:#7a1013;
+    background:var(--crimson-bg);border:1px solid var(--crimson);color:var(--crimson-text);
     font-size:15px;padding:10px 12px;border-radius:4px;margin-top:12px;line-height:1.4;
   }
   .notice-banner b{font-weight:700;}
-  .notice-banner button{margin-left:auto;background:none;border:none;color:#7a1013;font-size:18px;cursor:pointer;padding:0 2px;flex:none;line-height:1;}
+  .notice-banner button{margin-left:auto;background:none;border:none;color:var(--crimson-text);font-size:18px;cursor:pointer;padding:0 2px;flex:none;line-height:1;}
 
   /* ---------- Generic layout ---------- */
   main{flex:1;padding:18px;padding-top:16px;}
@@ -116,7 +166,7 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
     background-size:100% auto;background-position:center -70px;background-repeat:no-repeat;
     opacity:0.1;pointer-events:none;
   }
-  h1,h2,h3{text-wrap:balance;margin:0;color:var(--blue-dark);}
+  h1,h2,h3{text-wrap:balance;margin:0;color:var(--heading);}
   .eyebrow{
     font-family:'Baloo 2',monospace;font-size:13.5px;letter-spacing:0.09em;text-transform:uppercase;
     color:var(--crimson);font-weight:700;
@@ -166,11 +216,11 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .borgo-name{font-weight:700;font-size:15px;margin-top:9px;}
   .borgo-country{font-size:13.5px;color:var(--ink-soft);margin-top:2px;}
   .borgo-meta{display:flex;justify-content:space-between;align-items:center;margin-top:11px;font-size:12.5px;color:var(--ink-soft);}
-  .badge-count{font-family:'Baloo 2',monospace;font-weight:600;color:var(--blue-dark);background:var(--paper-3);border-radius:4px;padding:3px 7px;}
+  .badge-count{font-family:'Baloo 2',monospace;font-weight:600;color:var(--heading);background:var(--paper-3);border-radius:4px;padding:3px 7px;}
 
   /* ---------- Back header / detail banner ---------- */
   .back-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
-  .back-btn{background:var(--paper-2);border:1px solid var(--line);color:var(--blue-dark);border-radius:4px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;flex:none;}
+  .back-btn{background:var(--paper-2);border:1px solid var(--line);color:var(--heading);border-radius:4px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:17px;flex:none;}
   .detail-banner{border-radius:4px;padding:18px;border:1px solid var(--line);}
   .detail-banner-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
   .detail-banner-text{min-width:0;flex:1;}
@@ -226,7 +276,7 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .dot{width:7px;height:7px;border-radius:50%;background:var(--green);flex:none;}
 
   .fav-btn{
-    width:100%;margin-top:18px;background:var(--paper-2);border:2px solid var(--blue);color:var(--blue-dark);
+    width:100%;margin-top:18px;background:var(--paper-2);border:2px solid var(--blue);color:var(--heading);
     font-weight:700;font-size:16px;border-radius:4px;padding:14px;cursor:pointer;font-family:inherit;
     display:flex;align-items:center;justify-content:center;gap:9px;
   }
@@ -270,6 +320,16 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .social-card .gmaps-sub{font-size:13.5px;color:rgba(255,255,255,0.82);margin-top:3px;}
   .social-card .gmaps-arrow{font-size:18px;flex:none;opacity:0.85;}
   .gmaps-card{background:linear-gradient(135deg,var(--blue),var(--blue-dark));}
+  .official-app-btn{
+    display:flex;align-items:center;gap:12px;width:100%;margin-top:22px;
+    background:linear-gradient(135deg,var(--yellow),#ff8a3d);color:#1a1200;
+    border-radius:6px;padding:18px 20px;text-decoration:none;font-weight:800;
+    box-shadow:0 4px 14px rgba(232,180,0,0.35);
+  }
+  .official-app-btn .official-app-ic{font-size:28px;flex:none;}
+  .official-app-btn .official-app-label{flex:1;font-size:18px;}
+  .official-app-btn .official-app-arrow{font-size:22px;flex:none;}
+  .official-app-btn:active{transform:scale(0.98);}
   .instagram-card{background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);}
   .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px;}
   .photo-tile{
@@ -284,6 +344,19 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .photo-tile.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--ink-soft);border-style:dashed;}
   .photo-tile.placeholder .glyph{font-size:26px;}
   .photo-tile.placeholder span.lbl{font-size:12.5px;font-weight:600;text-align:center;padding:0 10px;}
+  .webcam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+  .webcam-tile{
+    position:relative;border-radius:4px;overflow:hidden;aspect-ratio:1/1;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    text-decoration:none;color:#fff;padding:12px;text-align:center;
+  }
+  .webcam-tile .webcam-ic{font-size:30px;}
+  .webcam-tile .webcam-live{
+    position:absolute;top:8px;left:8px;background:#d62839;color:#fff;font-size:10.5px;font-weight:800;
+    padding:2px 7px;border-radius:3px;letter-spacing:0.04em;
+  }
+  .webcam-tile .webcam-name{font-size:13.5px;font-weight:700;line-height:1.25;}
+  .webcam-tile .webcam-arrow{font-size:15px;opacity:0.85;}
   .photo-lightbox{
     position:fixed;inset:0;background:rgba(10,15,20,0.92);z-index:70;
     display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;
@@ -329,7 +402,7 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .info-card a{color:var(--blue);font-weight:700;text-decoration:underline;}
   .emergency-card{background:var(--pink-bg);border:1px solid var(--pink);border-radius:4px;padding:15px;margin-top:12px;}
   .emergency-card h3{color:var(--pink);font-size:16px;margin-bottom:6px;}
-  .emergency-card p{font-size:14.5px;color:#7a1550;margin:0;}
+  .emergency-card p{font-size:14.5px;color:var(--pink-text);margin:0;}
   .emergency-card .num{font-family:'Baloo 2',monospace;font-size:20px;font-weight:700;color:var(--pink);letter-spacing:0.04em;user-select:all;}
 
   /* ---------- Saved view ---------- */
@@ -345,8 +418,8 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   .tabbar-inner{
     pointer-events:auto;
     width:100%;max-width:600px;
-    display:grid;grid-template-columns:repeat(5,1fr);
-    background:#fff;
+    display:grid;grid-template-columns:repeat(6,1fr);
+    background:var(--paper);
     border-top:1px solid var(--line);
     box-shadow:0 -2px 10px rgba(24,36,48,0.06);
   }
@@ -373,6 +446,8 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
   <div class="topbar">
     <div class="topbar-row">
       <div class="wordmark">Gusti Digitali<small>FESTIVAL GUIDE &middot; GORIZIA SEP 24&ndash;27</small></div>
+      <div id="google_translate_element" class="translate-widget"></div>
+      <button class="icon-btn" id="btn-translate-reset" title="Original (English)" aria-label="Reset translation to English" style="font-size:13px;font-weight:800;">EN</button>
       <button class="icon-btn" id="btn-search-shortcut" title="Search" aria-label="Search">&#128269;</button>
     </div>
     <div class="notice-banner" id="demo-banner">
@@ -418,6 +493,12 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
 
       <div class="section-label"><h2>Explore the borghi</h2></div>
       <div class="borgo-grid" id="borgo-grid"></div>
+
+      <a class="official-app-btn" href="https://gustidifrontiera.regione.fvg.it/gusti/index.html" target="_blank" rel="noopener">
+        <span class="official-app-ic">&#128506;&#65039;</span>
+        <span class="official-app-label">Interactive map official</span>
+        <span class="official-app-arrow">&#8594;</span>
+      </a>
     </section>
 
     <!-- BORGO DETAIL -->
@@ -471,6 +552,11 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
     <!-- MAP -->
     <section class="view" id="view-map">
       <div class="section-label" style="margin-top:0;"><h2>Festival map</h2></div>
+      <a class="official-app-btn" style="margin-top:0;margin-bottom:16px;" href="https://gustidifrontiera.regione.fvg.it/gusti/index.html" target="_blank" rel="noopener">
+        <span class="official-app-ic">&#128506;&#65039;</span>
+        <span class="official-app-label">Interactive map official</span>
+        <span class="official-app-arrow">&#8594;</span>
+      </a>
       <div class="map-wrap">
         <div class="map-image-wrap" id="map-image-wrap">
           <img src="assets/festival-map.jpg" alt="Official Gusti di Frontiera 2026 map showing the 17 borghi, info points, restrooms, first aid, parking and emergency exit routes" class="map-image">
@@ -523,6 +609,13 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
       <div class="photo-grid" id="photo-grid"></div>
     </section>
 
+    <!-- WEBCAM -->
+    <section class="view" id="view-webcam">
+      <div class="section-label" style="margin-top:0;"><h2>Live webcams</h2></div>
+      <p class="muted" style="font-size:14px;">Live public webcams around Gorizia, hosted on go2025.eu. Tap a thumbnail to open the live stream on their site.</p>
+      <div class="webcam-grid" id="webcam-grid"></div>
+    </section>
+
   </main>
 
   <div class="tabbar">
@@ -530,6 +623,7 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
       <button class="tab-btn active" data-tab="home"><span class="ic">&#127968;</span><span class="lb">Home</span></button>
       <button class="tab-btn" data-tab="map"><span class="ic">&#128506;&#65039;</span><span class="lb">Map</span></button>
       <button class="tab-btn" data-tab="photos"><span class="ic">&#128247;</span><span class="lb">Photos</span></button>
+      <button class="tab-btn" data-tab="webcam"><span class="ic">&#128249;</span><span class="lb">Webcam</span></button>
       <button class="tab-btn" data-tab="search"><span class="ic">&#128269;</span><span class="lb">Search</span></button>
       <button class="tab-btn" data-tab="saved"><span class="ic">&#9733;</span><span class="lb">Saved</span></button>
     </div>
@@ -544,6 +638,22 @@ festival hrane gorica italija, sajam hrane gorica, ulična hrana italija festiva
 
 </div>
 
+<script>
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages: 'it,sl,de,hr,fr',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+  document.getElementById('btn-translate-reset').addEventListener('click', function(){
+    document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+    document.cookie = 'googtrans=; path=/; domain=.' + location.hostname + '; expires=Thu, 01 Jan 1970 00:00:00 UTC';
+    location.reload();
+  });
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

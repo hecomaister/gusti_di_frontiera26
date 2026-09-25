@@ -404,10 +404,78 @@
     { src:'assets/photos/stroopwafel-stand.jpg', alt:'Stand staff preparing waffles on a large flat griddle', credit:'Waffle stand &middot; on site' },
     { src:'assets/photos/sausage-toppings-bar.jpg', alt:'Grilled sausages and a toppings bar with tomato, cucumber and cabbage', credit:'Sausage stand &middot; on site' },
     { src:'assets/photos/skewer-grill.jpg', alt:'Rows of skewers cooking on a long charcoal grill', credit:'Skewer grill &middot; on site' },
-    { src:'assets/photos/london-bus-bar.jpg', alt:'A red London double-decker bus set up as a drinks bar in a piazza', credit:'London bus bar &middot; on site' }
+    { src:'assets/photos/london-bus-bar.jpg', alt:'A red London double-decker bus set up as a drinks bar in a piazza', credit:'London bus bar &middot; on site' },
+    { src:'assets/photos/1000023481.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023482.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023483.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023484.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023485.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023486.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023497.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023498.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023499.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023500.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023501.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023502.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023503.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023504.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023505.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023506.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023507.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023508.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023510.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023511.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023512.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023513.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023514.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023515.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023516.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023517.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023518.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023519.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023520.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023521.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023522.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023523.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023524.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023525.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023526.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023527.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023528.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023529.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023530.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023531.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023532.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023533.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' },
+    { src:'assets/photos/1000023534.jpg', alt:'Photo from Gusti di Frontiera 2026', credit:'Visitor photo &middot; on site' }
   ];
 
-  var views = ['home','borgo','stand','search','map','saved','photos'];
+  var WEBCAMS = [
+    { name:'Gorica &ndash; Corso Verdi', url:'https://www.go2025.eu/sl/webcam/gorica-corso-verdi', color1:'#0a5fa0', color2:'#0a3760' },
+    { name:'Travnik, Gorica (kamera 1)', url:'https://www.go2025.eu/sl/webcam/travnik-gorica-1', color1:'#127a41', color2:'#0a4f2a' },
+    { name:'Travnik, Gorica (kamera 2)', url:'https://www.go2025.eu/sl/webcam/travnik-gorica', color1:'#127a41', color2:'#0a4f2a' },
+    { name:'Brezmejno obmo&#269;je', url:'https://www.go2025.eu/sl/webcam/brezmejno-obmocje', color1:'#a1265c', color2:'#6d1a3e' }
+  ];
+
+  function renderWebcams(){
+    var grid = document.getElementById('webcam-grid');
+    grid.innerHTML = '';
+    WEBCAMS.forEach(function(cam){
+      var tile = document.createElement('a');
+      tile.className = 'webcam-tile';
+      tile.href = cam.url;
+      tile.target = '_blank';
+      tile.rel = 'noopener';
+      tile.style.background = 'linear-gradient(135deg,'+cam.color1+','+cam.color2+')';
+      tile.innerHTML = '<span class="webcam-live">LIVE</span>'+
+        '<span class="webcam-ic">&#128249;</span>'+
+        '<span class="webcam-name">'+cam.name+'</span>'+
+        '<span class="webcam-arrow">&#8594; go2025.eu</span>';
+      grid.appendChild(tile);
+    });
+  }
+
+  var views = ['home','borgo','stand','search','map','saved','photos','webcam'];
   function showView(name){
     state.view = name;
     views.forEach(function(v){ document.getElementById('view-'+v).classList.toggle('active', v===name); });
@@ -701,6 +769,7 @@
       if(t==='map') renderMap();
       if(t==='saved') renderSaved();
       if(t==='photos') renderPhotos();
+      if(t==='webcam') renderWebcams();
       showView(t);
       return;
     }
