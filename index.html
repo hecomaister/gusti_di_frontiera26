@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gusti di Frontiera 2026 — Guida ai Borghi, Menu e Mappa di Gorizia</title>
+<meta name="description" content="Guida non ufficiale a Gusti di Frontiera 2026 a Gorizia: mappa interattiva dei 17 borghi, menu e prezzi degli stand, servizi e punti di primo soccorso. Aggiornata in tempo reale.">
+
+<!-- SEO keywords: IT / EN / SL / DE / HR -->
+<meta name="keywords" content="
+gusti di frontiera, gusti di frontiera 2026, gusti di frontiera gorizia, festival del cibo gorizia, sagra gorizia, cibo di strada gorizia, street food gorizia, borghi gusti di frontiera, mappa gusti di frontiera, menu gusti di frontiera, dove mangiare a gorizia, eventi gorizia, cibo italia, cibo gorizia, festa transfrontaliera gorizia nova gorica,
+gusti di frontiera food festival, gusti di frontiera 2026 gorizia, gorizia food festival, gorizia street food, italy food festival gorizia, italian street food, food festival italy, gorizia villages map, gusti di frontiera map, gusti di frontiera menu, where to eat in gorizia, gorizia events, food italy gorizia, cross-border food festival gorizia nova gorica,
+gusti di frontiera festival, gusti di frontiera gorica, festival hrane gorica, ulična hrana gorica, sejem hrane gorica, kje jesti v gorici, zemljevid gusti di frontiera, jedilniki gusti di frontiera, dogodki gorica, italijanska hrana, čezmejni festival gorica nova gorica,
+gusti di frontiera görz, gusti di frontiera festival görz, streetfood görz, foodfestival görz, essen in görz, italienisches essen, gusti di frontiera karte, gusti di frontiera speisekarte, veranstaltungen görz, grenzüberschreitendes fest görz nova gorica,
+gusti di frontiera gorica, festival hrane gorica italija, street food gorica, sajam hrane gorica, gdje jesti u gorici, karta gusti di frontiera, jelovnici gusti di frontiera, događaji gorica, talijanska hrana, prekogranični festival gorica nova gorica
+">
+
+<meta name="author" content="Gusti di Frontiera — guida non ufficiale">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gustifrontiera.github.io/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gusti di Frontiera 2026 — Guida ai Borghi, Menu e Mappa">
+<meta property="og:description" content="Mappa interattiva, menu e prezzi reali degli stand di Gusti di Frontiera 2026 a Gorizia. 17 borghi, aggiornata in tempo reale durante l'evento.">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="sl_SI">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="hr_HR">
+
+<meta name="theme-color" content="#0aa051">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <h1 class="brand">🍽️ Gusti di Frontiera <span class="brand-year">2026</span></h1>
+    <nav class="tabs" role="tablist" aria-label="Sezioni">
+      <button class="tab active" data-view="home">Home</button>
+      <button class="tab" data-view="map">Mappa</button>
+      <button class="tab" data-view="search">Cerca</button>
+      <button class="tab" data-view="saved">Preferiti</button>
+    </nav>
+  </div>
+</header>
+
+<main id="app">
+
+  <!-- HOME -->
+  <section id="view-home" class="view active">
+    <div class="hero">
+      <h2>Gorizia &amp; Nova Gorica, 25–27 Settembre</h2>
+      <p>Guida non ufficiale al festival: 17 borghi del mondo, street food, mappa interattiva e i menu reali degli stand, aggiornati man mano che vengono raccolti sul posto.</p>
+      <p class="hero-note">⚠️ Ogni menu senza dati reali è etichettato onestamente <strong>"Menu in arrivo"</strong>: nessun prezzo è mai inventato.</p>
+    </div>
+
+    <h3 class="section-title">I 17 borghi</h3>
+    <div id="borghi-grid" class="grid"></div>
+  </section>
+
+  <!-- BORGO DETAIL -->
+  <section id="view-borgo" class="view">
+    <button class="back-btn" data-back="home">← Torna ai borghi</button>
+    <div id="borgo-detail"></div>
+  </section>
+
+  <!-- MAP -->
+  <section id="view-map" class="view">
+    <h2 class="section-title">Mappa del festival</h2>
+    <p class="muted">Posizioni verificate borgo per borgo sulla mappa ufficiale. Tocca un numero per i dettagli.</p>
+    <div class="map-wrap">
+      <div id="map-canvas" class="map-canvas">
+        <div class="map-street map-street-1"></div>
+        <div class="map-street map-street-2"></div>
+        <div id="map-pins"></div>
+        <div id="service-pins"></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span class="legend-item"><span class="dot high"></span> posizione confermata</span>
+      <span class="legend-item"><span class="dot medium"></span> da confermare sul posto</span>
+    </div>
+    <h3 class="section-title">Servizi utili</h3>
+    <ul id="services-list" class="services-list"></ul>
+  </section>
+
+  <!-- SEARCH -->
+  <section id="view-search" class="view">
+    <h2 class="section-title">Cerca uno stand o un borgo</h2>
+    <input id="search-input" class="search-input" type="search" placeholder="Cerca per nome borgo o via...">
+    <div class="filters">
+      <label><input type="checkbox" id="filter-has-menu"> Solo con menu pubblicato</label>
+    </div>
+    <div id="search-results" class="grid"></div>
+  </section>
+
+  <!-- SAVED -->
+  <section id="view-saved" class="view">
+    <h2 class="section-title">I tuoi preferiti</h2>
+    <p class="muted">Salva i borghi che vuoi visitare: restano qui anche se chiudi la pagina.</p>
+    <div id="saved-grid" class="grid"></div>
+    <p id="saved-empty" class="muted" hidden>Non hai ancora salvato nessun borgo. Tocca la ⭐ su una scheda per aggiungerlo.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Guida non ufficiale creata dalla community · Dati verificati sul posto quando disponibili · Servizio mobilità gratuito 348&nbsp;662&nbsp;3013 · Emergenze 112</p>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
